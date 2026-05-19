@@ -17,32 +17,34 @@ package org.apache.ibatis.submitted.nestedresulthandler_gh1551;
 
 public class ProductInfo {
 
-  private Long id;
-  private String productId;
-  private String otherInfo;
+    private Long id;
 
-  public Long getId() {
-    return id;
-  }
+    private String productId;
 
-  public void setId(Long id) {
-    this.id = id;
-  }
+    private String otherInfo;
 
-  public String getProductId() {
-    return productId;
-  }
+    public Long getId() {
+        return id;
+    }
 
-  public void setProductId(String productId) {
-    this.productId = productId;
-  }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-  public String getOtherInfo() {
-    return otherInfo;
-  }
+    public String getProductId() {
+        return productId;
+    }
 
-  public void setOtherInfo(String otherInfo) {
-    this.otherInfo = otherInfo;
-  }
+    public void setProductId(String productId) {
+        this.productId = productId;
+    }
+
+    public String getOtherInfo() {
+        return otherInfo;
+    }
+
+    public void setOtherInfo(String otherInfo) {
+        this.otherInfo = otherInfo;
+    }
 
 }

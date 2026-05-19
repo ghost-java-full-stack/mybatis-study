@@ -20,5 +20,7 @@ import org.apache.ibatis.submitted.resolution.User;
 
 @CacheNamespace
 public interface MapperB {
-  User getUser(Integer id);
+
+    User getUser(Integer id);
+
 }

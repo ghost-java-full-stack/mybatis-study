@@ -18,58 +18,60 @@ package org.apache.ibatis.submitted.annotion_many_one_add_resultmapid;
 import java.util.List;
 
 public class User {
-  private Integer id;
-  private String username;
-  private List<User> teachers;
-  private Role role;
-  private List<Role> roles;
 
-  public Role getRole() {
-    return role;
-  }
+    private Integer id;
 
-  public void setRole(Role role) {
-    this.role = role;
-  }
+    private String username;
 
-  @Override
-  public String toString() {
-    return "User{" +
-        "id=" + id +
-        ", username='" + username + '\'' +
-        ", roles=" + roles +
-        '}';
-  }
+    private List<User> teachers;
 
-  public Integer getId() {
-    return id;
-  }
+    private Role role;
 
-  public void setId(Integer id) {
-    this.id = id;
-  }
+    private List<Role> roles;
 
-  public String getUsername() {
-    return username;
-  }
+    public Role getRole() {
+        return role;
+    }
 
-  public void setUsername(String username) {
-    this.username = username;
-  }
+    public void setRole(Role role) {
+        this.role = role;
+    }
 
-  public List<Role> getRoles() {
-    return roles;
-  }
+    @Override
+    public String toString() {
+        return "User{" + "id=" + id + ", username='" + username + '\'' + ", roles=" + roles + '}';
+    }
 
-  public void setRoles(List<Role> roles) {
-    this.roles = roles;
-  }
+    public Integer getId() {
+        return id;
+    }
 
-  public List<User> getTeachers() {
-    return teachers;
-  }
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-  public void setTeachers(List<User> teachers) {
-    this.teachers = teachers;
-  }
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public List<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
+    }
+
+    public List<User> getTeachers() {
+        return teachers;
+    }
+
+    public void setTeachers(List<User> teachers) {
+        this.teachers = teachers;
+    }
+
 }

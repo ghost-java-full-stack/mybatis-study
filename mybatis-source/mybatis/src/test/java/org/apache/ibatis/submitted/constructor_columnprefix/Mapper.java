@@ -23,22 +23,16 @@ import org.apache.ibatis.annotations.Select;
 
 public interface Mapper {
 
-  List<Article> getArticles();
+    List<Article> getArticles();
 
-  @ConstructorArgs({
-      @Arg(id = true, resultMap = "keyRM", columnPrefix = "key_", javaType = EntityKey.class),
-      @Arg(column = "name", javaType = String.class),
-      @Arg(resultMap = "authorRM", columnPrefix = "author_", javaType = Author.class),
-      @Arg(resultMap = "authorRM", columnPrefix = "coauthor_", javaType = Author.class),
-  })
-  @Select({
-      "select id key_id, name, author.id author_id, author.name author_name,",
-      "  coauthor.id coauthor_id, coauthor.name coauthor_name",
-      "from articles",
-      "left join authors author on author.id = articles.author_id",
-      "left join authors coauthor on coauthor.id = articles.coauthor_id",
-      "order by articles.id"
-  })
-  List<Article> getArticlesAnno();
+    @ConstructorArgs({ @Arg(id = true, resultMap = "keyRM", columnPrefix = "key_", javaType = EntityKey.class),
+            @Arg(column = "name", javaType = String.class),
+            @Arg(resultMap = "authorRM", columnPrefix = "author_", javaType = Author.class),
+            @Arg(resultMap = "authorRM", columnPrefix = "coauthor_", javaType = Author.class), })
+    @Select({ "select id key_id, name, author.id author_id, author.name author_name,",
+            "  coauthor.id coauthor_id, coauthor.name coauthor_name", "from articles",
+            "left join authors author on author.id = articles.author_id",
+            "left join authors coauthor on coauthor.id = articles.coauthor_id", "order by articles.id" })
+    List<Article> getArticlesAnno();
 
 }

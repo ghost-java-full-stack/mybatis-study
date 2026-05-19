@@ -16,17 +16,19 @@
 package org.apache.ibatis.submitted.not_null_column;
 
 public interface FatherMapper {
-  Father selectByIdNoFid(Integer id);
 
-  Father selectByIdFid(Integer id);
+    Father selectByIdNoFid(Integer id);
 
-  Father selectByIdWithInternalResultMap(Integer id);
+    Father selectByIdFid(Integer id);
 
-  Father selectByIdWithRefResultMap(Integer id);
+    Father selectByIdWithInternalResultMap(Integer id);
 
-  Father selectByIdFidMultipleNullColumns(Integer id);
+    Father selectByIdWithRefResultMap(Integer id);
 
-  Father selectByIdFidMultipleNullColumnsAndBrackets(Integer id);
+    Father selectByIdFidMultipleNullColumns(Integer id);
 
-  Father selectByIdFidWorkaround(Integer id);
+    Father selectByIdFidMultipleNullColumnsAndBrackets(Integer id);
+
+    Father selectByIdFidWorkaround(Integer id);
+
 }

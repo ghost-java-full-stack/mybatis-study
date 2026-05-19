@@ -29,25 +29,29 @@ import java.util.stream.IntStream;
 import org.junit.jupiter.api.Test;
 
 class OgnlCacheTest {
-  @Test
-  void concurrentAccess() throws Exception {
-    class DataClass {
-      @SuppressWarnings("unused")
-      private int id;
+
+    @Test
+    void concurrentAccess() throws Exception {
+        class DataClass {
+
+            @SuppressWarnings("unused")
+            private int id;
+
+        }
+        int run = 1000;
+        Map<String, Object> context = new HashMap<>();
+        List<Future<Object>> futures = new ArrayList<>();
+        context.put("data", new DataClass());
+        ExecutorService executor = Executors.newCachedThreadPool();
+        IntStream.range(0, run).forEach(i -> {
+            futures.add(executor.submit(() -> {
+                return OgnlCache.getValue("data.id", context);
+            }));
+        });
+        for (int i = 0; i < run; i++) {
+            assertNotNull(futures.get(i).get());
+        }
+        executor.shutdown();
     }
-    int run = 1000;
-    Map<String, Object> context = new HashMap<>();
-    List<Future<Object>> futures = new ArrayList<>();
-    context.put("data", new DataClass());
-    ExecutorService executor = Executors.newCachedThreadPool();
-    IntStream.range(0, run).forEach(i -> {
-      futures.add(executor.submit(() -> {
-        return OgnlCache.getValue("data.id", context);
-      }));
-    });
-    for (int i = 0; i < run; i++) {
-      assertNotNull(futures.get(i).get());
-    }
-    executor.shutdown();
-  }
+
 }

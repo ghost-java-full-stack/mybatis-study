@@ -24,25 +24,26 @@ import org.apache.ibatis.plugin.Plugin;
 
 @Intercepts({})
 public class ExamplePlugin implements Interceptor {
-  private Properties properties;
 
-  @Override
-  public Object intercept(Invocation invocation) throws Throwable {
-    return invocation.proceed();
-  }
+    private Properties properties;
 
-  @Override
-  public Object plugin(Object target) {
-    return Plugin.wrap(target, this);
-  }
+    @Override
+    public Object intercept(Invocation invocation) throws Throwable {
+        return invocation.proceed();
+    }
 
-  @Override
-  public void setProperties(Properties properties) {
-    this.properties = properties;
-  }
+    @Override
+    public Object plugin(Object target) {
+        return Plugin.wrap(target, this);
+    }
 
-  public Properties getProperties() {
-    return properties;
-  }
+    @Override
+    public void setProperties(Properties properties) {
+        this.properties = properties;
+    }
+
+    public Properties getProperties() {
+        return properties;
+    }
 
 }

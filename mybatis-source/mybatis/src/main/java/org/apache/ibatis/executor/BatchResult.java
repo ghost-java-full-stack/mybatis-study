@@ -25,51 +25,53 @@ import org.apache.ibatis.mapping.MappedStatement;
  */
 public class BatchResult {
 
-  private final MappedStatement mappedStatement;
-  private final String sql;
-  private final List<Object> parameterObjects;
+    private final MappedStatement mappedStatement;
 
-  private int[] updateCounts;
+    private final String sql;
 
-  public BatchResult(MappedStatement mappedStatement, String sql) {
-    super();
-    this.mappedStatement = mappedStatement;
-    this.sql = sql;
-    this.parameterObjects = new ArrayList<>();
-  }
+    private final List<Object> parameterObjects;
 
-  public BatchResult(MappedStatement mappedStatement, String sql, Object parameterObject) {
-    this(mappedStatement, sql);
-    addParameterObject(parameterObject);
-  }
+    private int[] updateCounts;
 
-  public MappedStatement getMappedStatement() {
-    return mappedStatement;
-  }
+    public BatchResult(MappedStatement mappedStatement, String sql) {
+        super();
+        this.mappedStatement = mappedStatement;
+        this.sql = sql;
+        this.parameterObjects = new ArrayList<>();
+    }
 
-  public String getSql() {
-    return sql;
-  }
+    public BatchResult(MappedStatement mappedStatement, String sql, Object parameterObject) {
+        this(mappedStatement, sql);
+        addParameterObject(parameterObject);
+    }
 
-  @Deprecated
-  public Object getParameterObject() {
-    return parameterObjects.get(0);
-  }
+    public MappedStatement getMappedStatement() {
+        return mappedStatement;
+    }
 
-  public List<Object> getParameterObjects() {
-    return parameterObjects;
-  }
+    public String getSql() {
+        return sql;
+    }
 
-  public int[] getUpdateCounts() {
-    return updateCounts;
-  }
+    @Deprecated
+    public Object getParameterObject() {
+        return parameterObjects.get(0);
+    }
 
-  public void setUpdateCounts(int[] updateCounts) {
-    this.updateCounts = updateCounts;
-  }
+    public List<Object> getParameterObjects() {
+        return parameterObjects;
+    }
 
-  public void addParameterObject(Object parameterObject) {
-    this.parameterObjects.add(parameterObject);
-  }
+    public int[] getUpdateCounts() {
+        return updateCounts;
+    }
+
+    public void setUpdateCounts(int[] updateCounts) {
+        this.updateCounts = updateCounts;
+    }
+
+    public void addParameterObject(Object parameterObject) {
+        this.parameterObjects.add(parameterObject);
+    }
 
 }

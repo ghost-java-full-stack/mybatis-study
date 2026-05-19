@@ -16,6 +16,7 @@
 package org.apache.ibatis.domain.blog;
 
 public class PostLiteId {
+
     private int id;
 
     public PostLiteId() {
@@ -23,7 +24,7 @@ public class PostLiteId {
     }
 
     public void setId(int id) {
-      this.id = id;
+        this.id = id;
     }
 
     public PostLiteId(int aId) {
@@ -56,4 +57,5 @@ public class PostLiteId {
     public int hashCode() {
         return id;
     }
+
 }

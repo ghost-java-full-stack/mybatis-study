@@ -19,15 +19,18 @@ import java.util.List;
 
 public interface PersonMapper2 {
 
-  interface PersonType {
-    Person.Type getType();
-  }
+    interface PersonType {
 
-  List<Person> selectAllByType(Person.Type type);
+        Person.Type getType();
 
-  List<Person> selectAllByTypeNameAttribute(Person.Type type);
+    }
 
-  List<Person> selectAllByTypeWithInterface(PersonType personType);
+    List<Person> selectAllByType(Person.Type type);
 
-  List<Person> selectAllByTypeNameAttributeWithInterface(PersonType personType);
+    List<Person> selectAllByTypeNameAttribute(Person.Type type);
+
+    List<Person> selectAllByTypeWithInterface(PersonType personType);
+
+    List<Person> selectAllByTypeNameAttributeWithInterface(PersonType personType);
+
 }

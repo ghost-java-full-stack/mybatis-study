@@ -16,7 +16,9 @@
 package org.apache.ibatis.domain.blog;
 
 public class PostLite {
+
     private PostLiteId theId;
+
     private int blogId;
 
     public PostLite() {
@@ -70,4 +72,5 @@ public class PostLite {
         myresult = 31 * myresult + blogId;
         return myresult;
     }
+
 }

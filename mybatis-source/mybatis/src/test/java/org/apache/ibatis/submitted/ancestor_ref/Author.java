@@ -16,40 +16,45 @@
 package org.apache.ibatis.submitted.ancestor_ref;
 
 public class Author {
-  private Integer id;
-  private String name;
-  private Blog blog;
-  private Reputation reputation;
 
-  public Integer getId() {
-    return id;
-  }
+    private Integer id;
 
-  public void setId(Integer id) {
-    this.id = id;
-  }
+    private String name;
 
-  public String getName() {
-    return name;
-  }
+    private Blog blog;
 
-  public void setName(String name) {
-    this.name = name;
-  }
+    private Reputation reputation;
 
-  public Blog getBlog() {
-    return blog;
-  }
+    public Integer getId() {
+        return id;
+    }
 
-  public void setBlog(Blog blog) {
-    this.blog = blog;
-  }
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-  public Reputation getReputation() {
-    return reputation;
-  }
+    public String getName() {
+        return name;
+    }
 
-  public void setReputation(Reputation reputation) {
-    this.reputation = reputation;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Blog getBlog() {
+        return blog;
+    }
+
+    public void setBlog(Blog blog) {
+        this.blog = blog;
+    }
+
+    public Reputation getReputation() {
+        return reputation;
+    }
+
+    public void setReputation(Reputation reputation) {
+        this.reputation = reputation;
+    }
+
 }

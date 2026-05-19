@@ -16,41 +16,45 @@
 package org.apache.ibatis.submitted.associationtest;
 
 public class Car {
-  private int id;
-  private String type;
-  private Engine engine;
-  private Brakes brakes;
 
-  public int getId() {
-    return id;
-  }
+    private int id;
 
-  public void setId(int id) {
-    this.id = id;
-  }
+    private String type;
 
-  public String getType() {
-    return type;
-  }
+    private Engine engine;
 
-  public void setType(String type) {
-    this.type = type;
-  }
+    private Brakes brakes;
 
-  public Engine getEngine() {
-    return engine;
-  }
+    public int getId() {
+        return id;
+    }
 
-  public void setEngine(Engine engine) {
-    this.engine = engine;
-  }
+    public void setId(int id) {
+        this.id = id;
+    }
 
-  public Brakes getBrakes() {
-    return brakes;
-  }
+    public String getType() {
+        return type;
+    }
 
-  public void setBrakes(Brakes brakes) {
-    this.brakes = brakes;
-  }
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public Engine getEngine() {
+        return engine;
+    }
+
+    public void setEngine(Engine engine) {
+        this.engine = engine;
+    }
+
+    public Brakes getBrakes() {
+        return brakes;
+    }
+
+    public void setBrakes(Brakes brakes) {
+        this.brakes = brakes;
+    }
 
 }

@@ -19,45 +19,49 @@ package org.apache.ibatis.submitted.keygen;
  * @author liuzh
  */
 public class Country {
-  private Integer id;
-  private String countryname;
-  private String countrycode;
 
-  public Country() {
-  }
+    private Integer id;
 
-  public Country(String countryname, String countrycode) {
-    this.countryname = countryname;
-    this.countrycode = countrycode;
-  }
+    private String countryname;
 
-  public Country(Integer id, String countryname, String countrycode) {
-    this.id = id;
-    this.countryname = countryname;
-    this.countrycode = countrycode;
-  }
+    private String countrycode;
 
-  public Integer getId() {
-    return id;
-  }
+    public Country() {
+    }
 
-  public void setId(Integer id) {
-    this.id = id;
-  }
+    public Country(String countryname, String countrycode) {
+        this.countryname = countryname;
+        this.countrycode = countrycode;
+    }
 
-  public String getCountryname() {
-    return countryname;
-  }
+    public Country(Integer id, String countryname, String countrycode) {
+        this.id = id;
+        this.countryname = countryname;
+        this.countrycode = countrycode;
+    }
 
-  public void setCountryname(String countryname) {
-    this.countryname = countryname;
-  }
+    public Integer getId() {
+        return id;
+    }
 
-  public String getCountrycode() {
-    return countrycode;
-  }
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-  public void setCountrycode(String countrycode) {
-    this.countrycode = countrycode;
-  }
+    public String getCountryname() {
+        return countryname;
+    }
+
+    public void setCountryname(String countryname) {
+        this.countryname = countryname;
+    }
+
+    public String getCountrycode() {
+        return countrycode;
+    }
+
+    public void setCountrycode(String countrycode) {
+        this.countrycode = countrycode;
+    }
+
 }

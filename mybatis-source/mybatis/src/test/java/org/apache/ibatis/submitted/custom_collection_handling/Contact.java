@@ -18,7 +18,9 @@ package org.apache.ibatis.submitted.custom_collection_handling;
 public class Contact {
 
     private Integer id;
+
     private String address;
+
     private String phone;
 
     public String getAddress() {

@@ -19,41 +19,44 @@ import java.util.List;
 
 public class Parent {
 
-  private int id;
-  private String name;
-  private String surName;
-  private List<Child> childs;
+    private int id;
 
-  public int getId() {
-    return id;
-  }
+    private String name;
 
-  public void setId(int id) {
-    this.id = id;
-  }
+    private String surName;
 
-  public String getName() {
-    return name;
-  }
+    private List<Child> childs;
 
-  public void setName(String name) {
-    this.name = name;
-  }
+    public int getId() {
+        return id;
+    }
 
-  public String getSurName() {
-    return surName;
-  }
+    public void setId(int id) {
+        this.id = id;
+    }
 
-  public void setSurName(String surName) {
-    this.surName = surName;
-  }
+    public String getName() {
+        return name;
+    }
 
-  public List<Child> getChilds() {
-    return childs;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setChilds(List<Child> childs) {
-    this.childs = childs;
-  }
+    public String getSurName() {
+        return surName;
+    }
+
+    public void setSurName(String surName) {
+        this.surName = surName;
+    }
+
+    public List<Child> getChilds() {
+        return childs;
+    }
+
+    public void setChilds(List<Child> childs) {
+        this.childs = childs;
+    }
 
 }

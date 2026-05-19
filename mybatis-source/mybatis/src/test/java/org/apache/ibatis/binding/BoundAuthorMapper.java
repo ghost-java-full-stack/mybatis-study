@@ -27,158 +27,104 @@ import org.apache.ibatis.session.RowBounds;
 @CacheNamespace(readWrite = false)
 public interface BoundAuthorMapper {
 
-  //======================================================
+    // ======================================================
 
-  List<Post> findPostsInArray(Integer[] ids);
+    List<Post> findPostsInArray(Integer[] ids);
 
-  //======================================================
+    // ======================================================
 
-  List<Post> findPostsInList(List<Integer> ids);
+    List<Post> findPostsInList(List<Integer> ids);
 
-  //======================================================
+    // ======================================================
 
-  int insertAuthor(Author author);
+    int insertAuthor(Author author);
 
-  int insertAuthorInvalidSelectKey(Author author);
+    int insertAuthorInvalidSelectKey(Author author);
 
-  int insertAuthorInvalidInsert(Author author);
+    int insertAuthorInvalidInsert(Author author);
 
-  int insertAuthorDynamic(Author author);
+    int insertAuthorDynamic(Author author);
 
-  //======================================================
+    // ======================================================
 
-  @ConstructorArgs({
-      @Arg(column = "AUTHOR_ID", javaType = int.class)
-  })
-  @Results({
-      @Result(property = "username", column = "AUTHOR_USERNAME"),
-      @Result(property = "password", column = "AUTHOR_PASSWORD"),
-      @Result(property = "email", column = "AUTHOR_EMAIL"),
-      @Result(property = "bio", column = "AUTHOR_BIO")
-  })
-  @Select({
-      "SELECT ",
-      "  ID as AUTHOR_ID,",
-      "  USERNAME as AUTHOR_USERNAME,",
-      "  PASSWORD as AUTHOR_PASSWORD,",
-      "  EMAIL as AUTHOR_EMAIL,",
-      "  BIO as AUTHOR_BIO",
-      "FROM AUTHOR WHERE ID = #{id}"})
-  Author selectAuthor(int id);
+    @ConstructorArgs({ @Arg(column = "AUTHOR_ID", javaType = int.class) })
+    @Results({ @Result(property = "username", column = "AUTHOR_USERNAME"),
+            @Result(property = "password", column = "AUTHOR_PASSWORD"),
+            @Result(property = "email", column = "AUTHOR_EMAIL"), @Result(property = "bio", column = "AUTHOR_BIO") })
+    @Select({ "SELECT ", "  ID as AUTHOR_ID,", "  USERNAME as AUTHOR_USERNAME,", "  PASSWORD as AUTHOR_PASSWORD,",
+            "  EMAIL as AUTHOR_EMAIL,", "  BIO as AUTHOR_BIO", "FROM AUTHOR WHERE ID = #{id}" })
+    Author selectAuthor(int id);
 
-  //======================================================
+    // ======================================================
 
-  @Result(property = "id", column = "AUTHOR_ID", id = true)
-  @Result(property = "username", column = "AUTHOR_USERNAME")
-  @Result(property = "password", column = "AUTHOR_PASSWORD")
-  @Result(property = "email", column = "AUTHOR_EMAIL")
-  @Result(property = "bio", column = "AUTHOR_BIO")
-  @Select({
-    "SELECT ",
-    "  ID as AUTHOR_ID,",
-    "  USERNAME as AUTHOR_USERNAME,",
-    "  PASSWORD as AUTHOR_PASSWORD,",
-    "  EMAIL as AUTHOR_EMAIL,",
-    "  BIO as AUTHOR_BIO",
-    "FROM AUTHOR WHERE ID = #{id}"})
-  Author selectAuthorMapToPropertiesUsingRepeatable(int id);
+    @Result(property = "id", column = "AUTHOR_ID", id = true)
+    @Result(property = "username", column = "AUTHOR_USERNAME")
+    @Result(property = "password", column = "AUTHOR_PASSWORD")
+    @Result(property = "email", column = "AUTHOR_EMAIL")
+    @Result(property = "bio", column = "AUTHOR_BIO")
+    @Select({ "SELECT ", "  ID as AUTHOR_ID,", "  USERNAME as AUTHOR_USERNAME,", "  PASSWORD as AUTHOR_PASSWORD,",
+            "  EMAIL as AUTHOR_EMAIL,", "  BIO as AUTHOR_BIO", "FROM AUTHOR WHERE ID = #{id}" })
+    Author selectAuthorMapToPropertiesUsingRepeatable(int id);
 
-  //======================================================
+    // ======================================================
 
-  @ConstructorArgs({
-      @Arg(column = "AUTHOR_ID", javaType = Integer.class),
-      @Arg(column = "AUTHOR_USERNAME", javaType = String.class),
-      @Arg(column = "AUTHOR_PASSWORD", javaType = String.class),
-      @Arg(column = "AUTHOR_EMAIL", javaType = String.class),
-      @Arg(column = "AUTHOR_BIO", javaType = String.class),
-      @Arg(column = "AUTHOR_SECTION", javaType = Section.class)
-  })
-  @Select({
-      "SELECT ",
-      "  ID as AUTHOR_ID,",
-      "  USERNAME as AUTHOR_USERNAME,",
-      "  PASSWORD as AUTHOR_PASSWORD,",
-      "  EMAIL as AUTHOR_EMAIL,",
-      "  BIO as AUTHOR_BIO," +
-          "  FAVOURITE_SECTION as AUTHOR_SECTION",
-      "FROM AUTHOR WHERE ID = #{id}"})
-  Author selectAuthorConstructor(int id);
+    @ConstructorArgs({ @Arg(column = "AUTHOR_ID", javaType = Integer.class),
+            @Arg(column = "AUTHOR_USERNAME", javaType = String.class),
+            @Arg(column = "AUTHOR_PASSWORD", javaType = String.class),
+            @Arg(column = "AUTHOR_EMAIL", javaType = String.class),
+            @Arg(column = "AUTHOR_BIO", javaType = String.class),
+            @Arg(column = "AUTHOR_SECTION", javaType = Section.class) })
+    @Select({ "SELECT ", "  ID as AUTHOR_ID,", "  USERNAME as AUTHOR_USERNAME,", "  PASSWORD as AUTHOR_PASSWORD,",
+            "  EMAIL as AUTHOR_EMAIL,", "  BIO as AUTHOR_BIO," + "  FAVOURITE_SECTION as AUTHOR_SECTION",
+            "FROM AUTHOR WHERE ID = #{id}" })
+    Author selectAuthorConstructor(int id);
 
-  //======================================================
+    // ======================================================
 
-  @Arg(column = "AUTHOR_ID", javaType = Integer.class, id = true)
-  @Arg(column = "AUTHOR_USERNAME", javaType = String.class)
-  @Arg(column = "AUTHOR_PASSWORD", javaType = String.class)
-  @Arg(column = "AUTHOR_EMAIL", javaType = String.class)
-  @Arg(column = "AUTHOR_BIO", javaType = String.class)
-  @Arg(column = "AUTHOR_SECTION", javaType = Section.class)
-  @Select({
-    "SELECT ",
-    "  ID as AUTHOR_ID,",
-    "  USERNAME as AUTHOR_USERNAME,",
-    "  PASSWORD as AUTHOR_PASSWORD,",
-    "  EMAIL as AUTHOR_EMAIL,",
-    "  BIO as AUTHOR_BIO," +
-      "  FAVOURITE_SECTION as AUTHOR_SECTION",
-    "FROM AUTHOR WHERE ID = #{id}"})
-  Author selectAuthorMapToConstructorUsingRepeatable(int id);
-
-  //======================================================
-
-  @Arg(column = "AUTHOR_ID", javaType = int.class)
-  @Result(property = "username", column = "AUTHOR_USERNAME")
-  @Select({
-    "SELECT ",
-    "  ID as AUTHOR_ID,",
-    "  USERNAME as AUTHOR_USERNAME,",
-    "  PASSWORD as AUTHOR_PASSWORD,",
-    "  EMAIL as AUTHOR_EMAIL,",
-    "  BIO as AUTHOR_BIO",
-    "FROM AUTHOR WHERE ID = #{id}"})
-  Author selectAuthorUsingSingleRepeatable(int id);
-
-  //======================================================
-
-  @ConstructorArgs({
-    @Arg(column = "AUTHOR_ID", javaType = Integer.class),
-    @Arg(column = "AUTHOR_USERNAME", javaType = String.class),
-    @Arg(column = "AUTHOR_PASSWORD", javaType = String.class),
-    @Arg(column = "AUTHOR_EMAIL", javaType = String.class),
+    @Arg(column = "AUTHOR_ID", javaType = Integer.class, id = true)
+    @Arg(column = "AUTHOR_USERNAME", javaType = String.class)
+    @Arg(column = "AUTHOR_PASSWORD", javaType = String.class)
+    @Arg(column = "AUTHOR_EMAIL", javaType = String.class)
     @Arg(column = "AUTHOR_BIO", javaType = String.class)
-  })
-  @Arg(column = "AUTHOR_SECTION", javaType = Section.class)
-  @Select({
-    "SELECT ",
-    "  ID as AUTHOR_ID,",
-    "  USERNAME as AUTHOR_USERNAME,",
-    "  PASSWORD as AUTHOR_PASSWORD,",
-    "  EMAIL as AUTHOR_EMAIL,",
-    "  BIO as AUTHOR_BIO," +
-      "  FAVOURITE_SECTION as AUTHOR_SECTION",
-    "FROM AUTHOR WHERE ID = #{id}"})
-  Author selectAuthorUsingBothArgAndConstructorArgs(int id);
+    @Arg(column = "AUTHOR_SECTION", javaType = Section.class)
+    @Select({ "SELECT ", "  ID as AUTHOR_ID,", "  USERNAME as AUTHOR_USERNAME,", "  PASSWORD as AUTHOR_PASSWORD,",
+            "  EMAIL as AUTHOR_EMAIL,", "  BIO as AUTHOR_BIO," + "  FAVOURITE_SECTION as AUTHOR_SECTION",
+            "FROM AUTHOR WHERE ID = #{id}" })
+    Author selectAuthorMapToConstructorUsingRepeatable(int id);
 
-  //======================================================
+    // ======================================================
 
-  @Results(
-    @Result(property = "id", column = "AUTHOR_ID")
-  )
-  @Result(property = "username", column = "AUTHOR_USERNAME")
-  @Select({
-    "SELECT ",
-    "  ID as AUTHOR_ID,",
-    "  USERNAME as AUTHOR_USERNAME",
-    "FROM AUTHOR WHERE ID = #{id}"})
-  Author selectAuthorUsingBothResultAndResults(int id);
+    @Arg(column = "AUTHOR_ID", javaType = int.class)
+    @Result(property = "username", column = "AUTHOR_USERNAME")
+    @Select({ "SELECT ", "  ID as AUTHOR_ID,", "  USERNAME as AUTHOR_USERNAME,", "  PASSWORD as AUTHOR_PASSWORD,",
+            "  EMAIL as AUTHOR_EMAIL,", "  BIO as AUTHOR_BIO", "FROM AUTHOR WHERE ID = #{id}" })
+    Author selectAuthorUsingSingleRepeatable(int id);
 
-  //======================================================
+    // ======================================================
 
-  List<Post> findThreeSpecificPosts(@Param("one") int one,
-                                    RowBounds rowBounds,
-                                    @Param("two") int two,
-                                    int three);
+    @ConstructorArgs({ @Arg(column = "AUTHOR_ID", javaType = Integer.class),
+            @Arg(column = "AUTHOR_USERNAME", javaType = String.class),
+            @Arg(column = "AUTHOR_PASSWORD", javaType = String.class),
+            @Arg(column = "AUTHOR_EMAIL", javaType = String.class),
+            @Arg(column = "AUTHOR_BIO", javaType = String.class) })
+    @Arg(column = "AUTHOR_SECTION", javaType = Section.class)
+    @Select({ "SELECT ", "  ID as AUTHOR_ID,", "  USERNAME as AUTHOR_USERNAME,", "  PASSWORD as AUTHOR_PASSWORD,",
+            "  EMAIL as AUTHOR_EMAIL,", "  BIO as AUTHOR_BIO," + "  FAVOURITE_SECTION as AUTHOR_SECTION",
+            "FROM AUTHOR WHERE ID = #{id}" })
+    Author selectAuthorUsingBothArgAndConstructorArgs(int id);
 
-  @Flush
-  List<BatchResult> flush();
+    // ======================================================
+
+    @Results(@Result(property = "id", column = "AUTHOR_ID"))
+    @Result(property = "username", column = "AUTHOR_USERNAME")
+    @Select({ "SELECT ", "  ID as AUTHOR_ID,", "  USERNAME as AUTHOR_USERNAME", "FROM AUTHOR WHERE ID = #{id}" })
+    Author selectAuthorUsingBothResultAndResults(int id);
+
+    // ======================================================
+
+    List<Post> findThreeSpecificPosts(@Param("one") int one, RowBounds rowBounds, @Param("two") int two, int three);
+
+    @Flush
+    List<BatchResult> flush();
 
 }

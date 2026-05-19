@@ -22,39 +22,41 @@ import org.apache.ibatis.session.ResultContext;
  */
 public class DefaultResultContext<T> implements ResultContext<T> {
 
-  private T resultObject;
-  private int resultCount;
-  private boolean stopped;
+    private T resultObject;
 
-  public DefaultResultContext() {
-    resultObject = null;
-    resultCount = 0;
-    stopped = false;
-  }
+    private int resultCount;
 
-  @Override
-  public T getResultObject() {
-    return resultObject;
-  }
+    private boolean stopped;
 
-  @Override
-  public int getResultCount() {
-    return resultCount;
-  }
+    public DefaultResultContext() {
+        resultObject = null;
+        resultCount = 0;
+        stopped = false;
+    }
 
-  @Override
-  public boolean isStopped() {
-    return stopped;
-  }
+    @Override
+    public T getResultObject() {
+        return resultObject;
+    }
 
-  public void nextResultObject(T resultObject) {
-    resultCount++;
-    this.resultObject = resultObject;
-  }
+    @Override
+    public int getResultCount() {
+        return resultCount;
+    }
 
-  @Override
-  public void stop() {
-    this.stopped = true;
-  }
+    @Override
+    public boolean isStopped() {
+        return stopped;
+    }
+
+    public void nextResultObject(T resultObject) {
+        resultCount++;
+        this.resultObject = resultObject;
+    }
+
+    @Override
+    public void stop() {
+        this.stopped = true;
+    }
 
 }

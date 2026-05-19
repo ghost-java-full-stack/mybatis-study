@@ -19,76 +19,84 @@ import java.util.Date;
 
 public class Employee {
 
-  private int id;
-  private String firstName;
-  private String lastName;
-  private Date birthDate;
-  private double height;
-  private double weight;
-  private String heightUnits;
-  private String weightUnits;
+    private int id;
 
-  public int getId() {
-    return id;
-  }
+    private String firstName;
 
-  public void setId(int id) {
-    this.id = id;
-  }
+    private String lastName;
 
-  public String getFirstName() {
-    return firstName;
-  }
+    private Date birthDate;
 
-  public void setFirstName(String firstName) {
-    this.firstName = firstName;
-  }
+    private double height;
 
-  public String getLastName() {
-    return lastName;
-  }
+    private double weight;
 
-  public void setLastName(String lastName) {
-    this.lastName = lastName;
-  }
+    private String heightUnits;
 
-  public Date getBirthDate() {
-    return birthDate;
-  }
+    private String weightUnits;
 
-  public void setBirthDate(Date birthDate) {
-    this.birthDate = birthDate;
-  }
+    public int getId() {
+        return id;
+    }
 
-  public double getHeight() {
-    return height;
-  }
+    public void setId(int id) {
+        this.id = id;
+    }
 
-  public void setHeight(double height) {
-    this.height = height;
-  }
+    public String getFirstName() {
+        return firstName;
+    }
 
-  public double getWeight() {
-    return weight;
-  }
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 
-  public void setWeight(double weight) {
-    this.weight = weight;
-  }
+    public String getLastName() {
+        return lastName;
+    }
 
-  public String getHeightUnits() {
-    return heightUnits;
-  }
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
-  public void setHeightUnits(String heightUnits) {
-    this.heightUnits = heightUnits;
-  }
+    public Date getBirthDate() {
+        return birthDate;
+    }
 
-  public String getWeightUnits() {
-    return weightUnits;
-  }
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
+    }
 
-  public void setWeightUnits(String weightUnits) {
-    this.weightUnits = weightUnits;
-  }
+    public double getHeight() {
+        return height;
+    }
+
+    public void setHeight(double height) {
+        this.height = height;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
+    public String getHeightUnits() {
+        return heightUnits;
+    }
+
+    public void setHeightUnits(String heightUnits) {
+        this.heightUnits = heightUnits;
+    }
+
+    public String getWeightUnits() {
+        return weightUnits;
+    }
+
+    public void setWeightUnits(String weightUnits) {
+        this.weightUnits = weightUnits;
+    }
+
 }

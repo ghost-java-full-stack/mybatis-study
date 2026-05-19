@@ -33,9 +33,7 @@ import org.junit.jupiter.api.Test;
  * Tests for type handler of enum using annotations.
  *
  * @since #444
- *
  * @author Kazuki Shimizu
- *
  * @see org.apache.ibatis.annotations.Arg
  * @see org.apache.ibatis.annotations.Result
  * @see org.apache.ibatis.annotations.TypeDiscriminator
@@ -43,11 +41,13 @@ import org.junit.jupiter.api.Test;
 class EnumTypeHandlerUsingAnnotationTest {
 
     private static SqlSessionFactory sqlSessionFactory;
+
     private SqlSession sqlSession;
 
     @BeforeAll
     static void initDatabase() throws Exception {
-        try (Reader reader = Resources.getResourceAsReader("org/apache/ibatis/submitted/enumtypehandler_on_annotation/mybatis-config.xml")) {
+        try (Reader reader = Resources
+            .getResourceAsReader("org/apache/ibatis/submitted/enumtypehandler_on_annotation/mybatis-config.xml")) {
             sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
             sqlSessionFactory.getConfiguration().getMapperRegistry().addMapper(PersonMapper.class);
         }

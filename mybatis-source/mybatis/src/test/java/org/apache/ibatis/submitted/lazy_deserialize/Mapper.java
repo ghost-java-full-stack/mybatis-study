@@ -23,5 +23,6 @@ import org.apache.ibatis.annotations.Param;
  */
 public interface Mapper {
 
-  LazyObjectFoo loadFoo(@Param("fooId") int fooId);
+    LazyObjectFoo loadFoo(@Param("fooId") int fooId);
+
 }

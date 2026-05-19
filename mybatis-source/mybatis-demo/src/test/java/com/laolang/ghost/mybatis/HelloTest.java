@@ -23,7 +23,8 @@ public class HelloTest {
     public void beforeAll() {
         try (Reader reader = Resources.getResourceAsReader("com/laolang/ghost/mybatis/mybatis-config.xml")) {
             sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
-        } catch (IOException e) {
+        }
+        catch (IOException e) {
             log.error("初始化 sqlSessionFactory 出错.", e);
             throw new RuntimeException(e);
         }
@@ -38,4 +39,5 @@ public class HelloTest {
             log.info("dictType:{}", JSONUtil.toJsonStr(dictType));
         }
     }
+
 }

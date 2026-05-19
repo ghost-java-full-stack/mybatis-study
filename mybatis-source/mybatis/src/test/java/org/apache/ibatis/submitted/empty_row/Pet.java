@@ -16,32 +16,35 @@
 package org.apache.ibatis.submitted.empty_row;
 
 public class Pet {
-  private Integer id;
-  private String name;
 
-  private Pet grandchild;
+    private Integer id;
 
-  public Integer getId() {
-    return id;
-  }
+    private String name;
 
-  public void setId(Integer id) {
-    this.id = id;
-  }
+    private Pet grandchild;
 
-  public String getName() {
-    return name;
-  }
+    public Integer getId() {
+        return id;
+    }
 
-  public void setName(String name) {
-    this.name = name;
-  }
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-  public Pet getGrandchild() {
-    return grandchild;
-  }
+    public String getName() {
+        return name;
+    }
 
-  public void setGrandchild(Pet grandchild) {
-    this.grandchild = grandchild;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Pet getGrandchild() {
+        return grandchild;
+    }
+
+    public void setGrandchild(Pet grandchild) {
+        this.grandchild = grandchild;
+    }
+
 }

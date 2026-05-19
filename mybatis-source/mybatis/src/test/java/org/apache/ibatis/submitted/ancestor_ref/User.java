@@ -18,40 +18,45 @@ package org.apache.ibatis.submitted.ancestor_ref;
 import java.util.List;
 
 public class User {
-  private Integer id;
-  private String name;
-  private User friend;
-  private List<User> friends;
 
-  public Integer getId() {
-    return id;
-  }
+    private Integer id;
 
-  public void setId(Integer id) {
-    this.id = id;
-  }
+    private String name;
 
-  public String getName() {
-    return name;
-  }
+    private User friend;
 
-  public void setName(String name) {
-    this.name = name;
-  }
+    private List<User> friends;
 
-  public User getFriend() {
-    return friend;
-  }
+    public Integer getId() {
+        return id;
+    }
 
-  public void setFriend(User friend) {
-    this.friend = friend;
-  }
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-  public List<User> getFriends() {
-    return friends;
-  }
+    public String getName() {
+        return name;
+    }
 
-  public void setFriends(List<User> friends) {
-    this.friends = friends;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public User getFriend() {
+        return friend;
+    }
+
+    public void setFriend(User friend) {
+        this.friend = friend;
+    }
+
+    public List<User> getFriends() {
+        return friends;
+    }
+
+    public void setFriends(List<User> friends) {
+        this.friends = friends;
+    }
+
 }

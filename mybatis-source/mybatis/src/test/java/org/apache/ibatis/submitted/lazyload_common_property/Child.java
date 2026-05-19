@@ -16,40 +16,45 @@
 package org.apache.ibatis.submitted.lazyload_common_property;
 
 public class Child {
-  private Integer id;
-  private String name;
-  private Father father;
-  private GrandFather grandFather;
 
-  public Integer getId() {
-    return id;
-  }
+    private Integer id;
 
-  public void setId(Integer id) {
-    this.id = id;
-  }
+    private String name;
 
-  public String getName() {
-    return name;
-  }
+    private Father father;
 
-  public void setName(String name) {
-    this.name = name;
-  }
+    private GrandFather grandFather;
 
-  public Father getFather() {
-    return father;
-  }
+    public Integer getId() {
+        return id;
+    }
 
-  public void setFather(Father father) {
-    this.father = father;
-  }
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-  public GrandFather getGrandFather() {
-    return grandFather;
-  }
+    public String getName() {
+        return name;
+    }
 
-  public void setGrandFather(GrandFather grandFather) {
-    this.grandFather = grandFather;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Father getFather() {
+        return father;
+    }
+
+    public void setFather(Father father) {
+        this.father = father;
+    }
+
+    public GrandFather getGrandFather() {
+        return grandFather;
+    }
+
+    public void setGrandFather(GrandFather grandFather) {
+        this.grandFather = grandFather;
+    }
+
 }

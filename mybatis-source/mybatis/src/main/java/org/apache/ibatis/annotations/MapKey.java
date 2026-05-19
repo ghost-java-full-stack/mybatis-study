@@ -22,7 +22,8 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * The annotation that specify the property name(or column name) for a key value of {@link java.util.Map}.
+ * The annotation that specify the property name(or column name) for a key value of
+ * {@link java.util.Map}.
  *
  * <p>
  * <b>How to use:</b>
@@ -41,10 +42,11 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
 public @interface MapKey {
-  /**
-   * Returns the property name(or column name) for a key value of {@link java.util.Map}.
-   *
-   * @return the property name(or column name)
-   */
-  String value();
+
+    /**
+     * Returns the property name(or column name) for a key value of {@link java.util.Map}.
+     * @return the property name(or column name)
+     */
+    String value();
+
 }

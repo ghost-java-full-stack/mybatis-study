@@ -24,10 +24,13 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class EmptyNamespaceTest {
-  @Test
-  void testEmptyNamespace() throws Exception {
-    try (Reader reader = Resources.getResourceAsReader("org/apache/ibatis/submitted/empty_namespace/ibatisConfig.xml")) {
-        Assertions.assertThrows(PersistenceException.class, () -> new SqlSessionFactoryBuilder().build(reader));
+
+    @Test
+    void testEmptyNamespace() throws Exception {
+        try (Reader reader = Resources
+            .getResourceAsReader("org/apache/ibatis/submitted/empty_namespace/ibatisConfig.xml")) {
+            Assertions.assertThrows(PersistenceException.class, () -> new SqlSessionFactoryBuilder().build(reader));
+        }
     }
-  }
+
 }

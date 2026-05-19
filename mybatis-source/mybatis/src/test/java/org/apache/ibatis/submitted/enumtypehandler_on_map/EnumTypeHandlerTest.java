@@ -35,7 +35,8 @@ class EnumTypeHandlerTest {
 
     @BeforeAll
     static void initDatabase() throws Exception {
-        try (Reader reader = Resources.getResourceAsReader("org/apache/ibatis/submitted/enumtypehandler_on_map/ibatisConfig.xml")) {
+        try (Reader reader = Resources
+            .getResourceAsReader("org/apache/ibatis/submitted/enumtypehandler_on_map/ibatisConfig.xml")) {
             sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
         }
 
@@ -45,13 +46,14 @@ class EnumTypeHandlerTest {
 
     @Test
     void testEnumWithParam() {
-        try (SqlSession sqlSession = sqlSessionFactory.openSession() ) {
+        try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
             PersonMapper personMapper = sqlSession.getMapper(PersonMapper.class);
             List<Person> persons = personMapper.getByType(Person.Type.PERSON, "");
             Assertions.assertNotNull(persons, "Persons must not be null");
             Assertions.assertEquals(1, persons.size(), "Persons must contain exactly 1 person");
         }
     }
+
     @Test
     void testEnumWithoutParam() {
         try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
@@ -71,4 +73,5 @@ class EnumTypeHandlerTest {
             Assertions.assertEquals(1, persons.size(), "Persons must contain exactly 1 person");
         }
     }
+
 }

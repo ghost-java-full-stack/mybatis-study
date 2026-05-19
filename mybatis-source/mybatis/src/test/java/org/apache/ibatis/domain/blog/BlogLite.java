@@ -19,22 +19,24 @@ import java.util.List;
 
 public class BlogLite {
 
-  private int id;
-  private List<PostLite> posts;
+    private int id;
 
-  public int getId() {
-    return id;
-  }
+    private List<PostLite> posts;
 
-  public void setId(int id) {
-    this.id = id;
-  }
+    public int getId() {
+        return id;
+    }
 
-  public List<PostLite> getPosts() {
-    return posts;
-  }
+    public void setId(int id) {
+        this.id = id;
+    }
 
-  public void setPosts(List<PostLite> posts) {
-    this.posts = posts;
-  }
+    public List<PostLite> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<PostLite> posts) {
+        this.posts = posts;
+    }
+
 }

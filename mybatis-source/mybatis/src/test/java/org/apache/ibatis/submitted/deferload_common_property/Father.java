@@ -16,7 +16,9 @@
 package org.apache.ibatis.submitted.deferload_common_property;
 
 public class Father {
+
     private Integer id;
+
     private String name;
 
     public Integer getId() {
@@ -34,4 +36,5 @@ public class Father {
     public void setName(String name) {
         this.name = name;
     }
+
 }

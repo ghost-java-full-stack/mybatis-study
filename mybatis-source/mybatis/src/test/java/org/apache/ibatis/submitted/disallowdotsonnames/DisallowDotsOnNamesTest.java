@@ -28,7 +28,8 @@ class DisallowDotsOnNamesTest {
 
     @Test
     void testShouldNotAllowMappedStatementsWithDots() throws IOException {
-        Reader reader = Resources.getResourceAsReader("org/apache/ibatis/submitted/disallowdotsonnames/ibatisConfig.xml");
+        Reader reader = Resources
+            .getResourceAsReader("org/apache/ibatis/submitted/disallowdotsonnames/ibatisConfig.xml");
         Assertions.assertThrows(PersistenceException.class, () -> new SqlSessionFactoryBuilder().build(reader));
     }
 

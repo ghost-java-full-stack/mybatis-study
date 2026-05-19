@@ -23,25 +23,28 @@ import org.apache.ibatis.submitted.parent_reference_3level.Post;
 
 public class Blog {
 
-  private int id;
-  private String title;
-  private List<Post> posts;
+    private int id;
 
-  public Blog(@Param("id") int id, @Param("title") String title) {
-    this.id = id;
-    this.title = title;
-    this.posts = new ArrayList<>();
-  }
+    private String title;
 
-  public int getId() {
-    return id;
-  }
+    private List<Post> posts;
 
-  public String getTitle() {
-    return title;
-  }
+    public Blog(@Param("id") int id, @Param("title") String title) {
+        this.id = id;
+        this.title = title;
+        this.posts = new ArrayList<>();
+    }
 
-  public List<Post> getPosts() {
-    return posts;
-  }
+    public int getId() {
+        return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public List<Post> getPosts() {
+        return posts;
+    }
+
 }

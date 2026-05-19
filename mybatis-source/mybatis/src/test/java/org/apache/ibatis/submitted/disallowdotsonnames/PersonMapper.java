@@ -18,11 +18,13 @@ package org.apache.ibatis.submitted.disallowdotsonnames;
 import java.util.List;
 
 public interface PersonMapper {
-  Person selectByIdFlush(int id);
 
-  Person selectByIdNoFlush(int id);
+    Person selectByIdFlush(int id);
 
-  List<Person> selectAllFlush();
+    Person selectByIdNoFlush(int id);
 
-  List<Person> selectAllNoFlush();
+    List<Person> selectAllFlush();
+
+    List<Person> selectAllNoFlush();
+
 }

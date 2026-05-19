@@ -19,50 +19,52 @@ import java.io.Serializable;
 
 public class Person implements Serializable {
 
-  private int id;
-  private String firstname;
-  private String lastname;
+    private int id;
 
-  public Person() {
-  }
+    private String firstname;
 
-  public Person(int id, String firstname, String lastname) {
-    setId(id);
-    setFirstname(firstname);
-    setLastname(lastname);
-  }
+    private String lastname;
 
-  public int getId() {
-    return id;
-  }
+    public Person() {
+    }
 
-  public void setId(int id) {
-    this.id = id;
-  }
+    public Person(int id, String firstname, String lastname) {
+        setId(id);
+        setFirstname(firstname);
+        setLastname(lastname);
+    }
 
-  public String getFirstname() {
-    return firstname;
-  }
+    public int getId() {
+        return id;
+    }
 
-  public void setFirstname(String firstname) {
-    this.firstname = firstname;
-  }
+    public void setId(int id) {
+        this.id = id;
+    }
 
-  public String getLastname() {
-    return lastname;
-  }
+    public String getFirstname() {
+        return firstname;
+    }
 
-  public void setLastname(String lastname) {
-    this.lastname = lastname;
-  }
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
 
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("id=").append(id);
-    sb.append(", lastname=").append(lastname);
-    sb.append(", firstname=").append(firstname);
-    return sb.toString();
-  }
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("id=").append(id);
+        sb.append(", lastname=").append(lastname);
+        sb.append(", firstname=").append(firstname);
+        return sb.toString();
+    }
 
 }

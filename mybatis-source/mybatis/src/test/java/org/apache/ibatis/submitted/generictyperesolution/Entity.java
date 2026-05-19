@@ -18,31 +18,33 @@ package org.apache.ibatis.submitted.generictyperesolution;
 import java.io.Serializable;
 
 public class Entity<T extends Serializable> {
-  private T id;
 
-  private String name;
+    private T id;
 
-  private T fld1;
+    private String name;
 
-  public T fld2;
+    private T fld1;
 
-  public T getId() {
-    return id;
-  }
+    public T fld2;
 
-  public void setId(T id) {
-    this.id = id;
-  }
+    public T getId() {
+        return id;
+    }
 
-  public String getName() {
-    return name;
-  }
+    public void setId(T id) {
+        this.id = id;
+    }
 
-  public void setName(String name) {
-    this.name = name;
-  }
+    public String getName() {
+        return name;
+    }
 
-  public T getFld1() {
-    return fld1;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public T getFld1() {
+        return fld1;
+    }
+
 }

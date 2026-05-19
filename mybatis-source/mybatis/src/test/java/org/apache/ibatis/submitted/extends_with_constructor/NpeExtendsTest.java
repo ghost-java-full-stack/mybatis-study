@@ -53,6 +53,7 @@ class NpeExtendsTest {
         configuration.addMapper(TeacherMapper.class);
         configuration.getMappedStatementNames();
     }
+
     @Test
     void testWithConstructorConfiguration() {
         Configuration configuration = new Configuration();
@@ -68,7 +69,8 @@ class NpeExtendsTest {
         properties.setProperty("url", "jdbc:hsqldb:mem:extends_with_constructor");
         properties.setProperty("username", "sa");
         unpooledDataSourceFactory.setProperties(properties);
-        Environment environment = new Environment("extends_with_constructor", new JdbcTransactionFactory(), unpooledDataSourceFactory.getDataSource());
+        Environment environment = new Environment("extends_with_constructor", new JdbcTransactionFactory(),
+                unpooledDataSourceFactory.getDataSource());
 
         Configuration configuration = new Configuration();
         configuration.setEnvironment(environment);
@@ -79,6 +81,7 @@ class NpeExtendsTest {
 
         return new DefaultSqlSessionFactory(configuration);
     }
+
     @Test
     void testSelectWithTeacher() {
         SqlSessionFactory sqlSessionFactory = getSqlSessionFactoryWithConstructor();
@@ -89,6 +92,7 @@ class NpeExtendsTest {
             assertTrue(testStudent.getConstructors().contains(StudentConstructor.Constructor.ID_NAME));
         }
     }
+
     @Test
     void testSelectNoName() {
         SqlSessionFactory sqlSessionFactory = getSqlSessionFactoryWithConstructor();
@@ -100,4 +104,5 @@ class NpeExtendsTest {
             assertNull(testStudent.getName());
         }
     }
+
 }

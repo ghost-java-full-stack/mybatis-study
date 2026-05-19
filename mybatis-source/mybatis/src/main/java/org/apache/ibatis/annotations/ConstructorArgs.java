@@ -45,10 +45,11 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
 public @interface ConstructorArgs {
-  /**
-   * Returns mapping definitions for constructor.
-   *
-   * @return mapping definitions
-   */
-  Arg[] value() default {};
+
+    /**
+     * Returns mapping definitions for constructor.
+     * @return mapping definitions
+     */
+    Arg[] value() default {};
+
 }

@@ -16,31 +16,35 @@
 package org.apache.ibatis.submitted.selectkey;
 
 public class Name {
-  private int nameId;
-  private String name;
-  private String generatedName;
 
-  public String getName() {
-    return name;
-  }
+    private int nameId;
 
-  public void setName(String name) {
-    this.name = name;
-  }
+    private String name;
 
-  public int getNameId() {
-    return nameId;
-  }
+    private String generatedName;
 
-  public void setNameId(int nameId) {
-    this.nameId = nameId;
-  }
+    public String getName() {
+        return name;
+    }
 
-  public String getGeneratedName() {
-    return generatedName;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setGeneratedName(String generatedName) {
-    this.generatedName = generatedName;
-  }
+    public int getNameId() {
+        return nameId;
+    }
+
+    public void setNameId(int nameId) {
+        this.nameId = nameId;
+    }
+
+    public String getGeneratedName() {
+        return generatedName;
+    }
+
+    public void setGeneratedName(String generatedName) {
+        this.generatedName = generatedName;
+    }
+
 }

@@ -34,7 +34,7 @@ class EnumWithMethodTest {
     static void setUp() throws Exception {
         // create an SqlSessionFactory
         try (Reader reader = Resources
-                .getResourceAsReader("org/apache/ibatis/submitted/enum_with_method/mybatis-config.xml")) {
+            .getResourceAsReader("org/apache/ibatis/submitted/enum_with_method/mybatis-config.xml")) {
             sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
         }
 

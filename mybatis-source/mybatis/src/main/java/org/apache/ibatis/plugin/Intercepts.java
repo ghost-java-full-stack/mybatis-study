@@ -24,8 +24,7 @@ import java.lang.annotation.Target;
 /**
  * The annotation that specify target methods to intercept.
  *
- * <b>How to use:</b>
- * <pre>
+ * <b>How to use:</b> <pre>
  * &#064;Intercepts({&#064;Signature(
  *   type= Executor.class,
  *   method = "update",
@@ -40,17 +39,18 @@ import java.lang.annotation.Target;
  *   }
  * }
  * </pre>
+ *
  * @author Clinton Begin
  */
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 public @interface Intercepts {
-  /**
-   * Returns method signatures to intercept.
-   *
-   * @return method signatures
-   */
-  Signature[] value();
-}
 
+    /**
+     * Returns method signatures to intercept.
+     * @return method signatures
+     */
+    Signature[] value();
+
+}

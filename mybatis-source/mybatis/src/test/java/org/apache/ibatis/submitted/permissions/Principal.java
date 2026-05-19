@@ -20,23 +20,24 @@ import java.util.List;
 
 public class Principal {
 
-  private String principalName;
-  private List<Permission> permissions = new ArrayList<>();
+    private String principalName;
 
-  public String getPrincipalName() {
-    return principalName;
-  }
+    private List<Permission> permissions = new ArrayList<>();
 
-  public void setPrincipalName(String principalName) {
-    this.principalName = principalName;
-  }
+    public String getPrincipalName() {
+        return principalName;
+    }
 
-  public List<Permission> getPermissions() {
-    return permissions;
-  }
+    public void setPrincipalName(String principalName) {
+        this.principalName = principalName;
+    }
 
-  public void setPermissions(List<Permission> permissions) {
-    this.permissions = permissions;
-  }
+    public List<Permission> getPermissions() {
+        return permissions;
+    }
+
+    public void setPermissions(List<Permission> permissions) {
+        this.permissions = permissions;
+    }
 
 }

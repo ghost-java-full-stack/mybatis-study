@@ -17,23 +17,24 @@ package org.apache.ibatis.submitted.permissions;
 
 public class Permission {
 
-  private String permission;
-  private Resource resource;
+    private String permission;
 
-  public String getPermission() {
-    return permission;
-  }
+    private Resource resource;
 
-  public void setPermission(String permission) {
-    this.permission = permission;
-  }
+    public String getPermission() {
+        return permission;
+    }
 
-  public Resource getResource() {
-    return resource;
-  }
+    public void setPermission(String permission) {
+        this.permission = permission;
+    }
 
-  public void setResource(Resource resource) {
-    this.resource = resource;
-  }
+    public Resource getResource() {
+        return resource;
+    }
+
+    public void setResource(Resource resource) {
+        this.resource = resource;
+    }
 
 }

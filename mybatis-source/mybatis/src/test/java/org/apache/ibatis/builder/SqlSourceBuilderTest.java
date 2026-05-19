@@ -24,33 +24,36 @@ import org.junit.jupiter.api.Test;
 
 public class SqlSourceBuilderTest {
 
-  private static Configuration configuration;
-  private static SqlSourceBuilder sqlSourceBuilder;
-  private final String sqlFromXml = "\t\n\n  SELECT * \n        FROM user\n \t        WHERE user_id = 1\n\t  ";
+    private static Configuration configuration;
 
-  @BeforeEach
-  void setUp() {
-    configuration = new Configuration();
+    private static SqlSourceBuilder sqlSourceBuilder;
 
-    sqlSourceBuilder = new SqlSourceBuilder(configuration);
-  }
+    private final String sqlFromXml = "\t\n\n  SELECT * \n        FROM user\n \t        WHERE user_id = 1\n\t  ";
 
-  @Test
-  void testShrinkWhitespacesInSqlIsFalse() {
-    SqlSource sqlSource = sqlSourceBuilder.parse(sqlFromXml, null, null);
-    BoundSql boundSql = sqlSource.getBoundSql(null);
-    String actual = boundSql.getSql();
-    Assertions.assertEquals(sqlFromXml, actual);
-  }
+    @BeforeEach
+    void setUp() {
+        configuration = new Configuration();
 
-  @Test
-  void testShrinkWhitespacesInSqlIsTrue() {
-    configuration.setShrinkWhitespacesInSql(true);
-    SqlSource sqlSource = sqlSourceBuilder.parse(sqlFromXml, null, null);
-    BoundSql boundSql = sqlSource.getBoundSql(null);
-    String actual = boundSql.getSql();
+        sqlSourceBuilder = new SqlSourceBuilder(configuration);
+    }
 
-    String shrankWhitespacesInSql = "SELECT * FROM user WHERE user_id = 1";
-    Assertions.assertEquals(shrankWhitespacesInSql, actual);
-  }
+    @Test
+    void testShrinkWhitespacesInSqlIsFalse() {
+        SqlSource sqlSource = sqlSourceBuilder.parse(sqlFromXml, null, null);
+        BoundSql boundSql = sqlSource.getBoundSql(null);
+        String actual = boundSql.getSql();
+        Assertions.assertEquals(sqlFromXml, actual);
+    }
+
+    @Test
+    void testShrinkWhitespacesInSqlIsTrue() {
+        configuration.setShrinkWhitespacesInSql(true);
+        SqlSource sqlSource = sqlSourceBuilder.parse(sqlFromXml, null, null);
+        BoundSql boundSql = sqlSource.getBoundSql(null);
+        String actual = boundSql.getSql();
+
+        String shrankWhitespacesInSql = "SELECT * FROM user WHERE user_id = 1";
+        Assertions.assertEquals(shrankWhitespacesInSql, actual);
+    }
+
 }

@@ -18,7 +18,9 @@ package org.apache.ibatis.submitted.custom_collection_handling;
 public class Person {
 
     private Integer id;
+
     private String name;
+
     private CustomCollection<Contact> contacts;
 
     public Integer getId() {

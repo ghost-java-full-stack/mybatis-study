@@ -17,52 +17,55 @@ package org.apache.ibatis.submitted.parent_childs;
 
 public class Child {
 
-  private Integer id;
-  private String name;
-  private String surName;
-  private Integer age;
+    private Integer id;
 
-  public Child() {
+    private String name;
 
-  }
+    private String surName;
 
-  public Child(Integer id, String name, String surName, Integer age) {
-    this.id = id;
-    this.name = name;
-    this.surName = surName;
-    this.age = age;
-  }
+    private Integer age;
 
-  public Integer getId() {
-    return id;
-  }
+    public Child() {
 
-  public void setId(Integer id) {
-    this.id = id;
-  }
+    }
 
-  public String getName() {
-    return name;
-  }
+    public Child(Integer id, String name, String surName, Integer age) {
+        this.id = id;
+        this.name = name;
+        this.surName = surName;
+        this.age = age;
+    }
 
-  public void setName(String name) {
-    this.name = name;
-  }
+    public Integer getId() {
+        return id;
+    }
 
-  public String getSurName() {
-    return surName;
-  }
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-  public void setSurName(String surName) {
-    this.surName = surName;
-  }
+    public String getName() {
+        return name;
+    }
 
-  public int getAge() {
-    return age;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setAge(int age) {
-    this.age = age;
-  }
+    public String getSurName() {
+        return surName;
+    }
+
+    public void setSurName(String surName) {
+        this.surName = surName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
 
 }

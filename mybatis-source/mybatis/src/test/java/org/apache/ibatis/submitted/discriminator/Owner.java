@@ -16,31 +16,35 @@
 package org.apache.ibatis.submitted.discriminator;
 
 public class Owner {
-  private Integer id;
-  private String name;
-  private Vehicle vehicle;
 
-  public Integer getId() {
-    return id;
-  }
+    private Integer id;
 
-  public void setId(Integer id) {
-    this.id = id;
-  }
+    private String name;
 
-  public String getName() {
-    return name;
-  }
+    private Vehicle vehicle;
 
-  public void setName(String name) {
-    this.name = name;
-  }
+    public Integer getId() {
+        return id;
+    }
 
-  public Vehicle getVehicle() {
-    return vehicle;
-  }
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-  public void setVehicle(Vehicle vehicle) {
-    this.vehicle = vehicle;
-  }
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Vehicle getVehicle() {
+        return vehicle;
+    }
+
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
+    }
+
 }

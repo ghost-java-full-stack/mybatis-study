@@ -18,85 +18,91 @@ package org.apache.ibatis.submitted.foreach_map;
 import java.util.Objects;
 
 public class NestedBeanMapEntry {
-  public NestedBeanMapEntry() {
-  }
 
-  public NestedBeanMapEntry(Integer keya, Boolean keyb, Integer valuea, Boolean valueb) {
-    this.keya = keya;
-    this.keyb = keyb;
-    this.valuea = valuea;
-    this.valueb = valueb;
-  }
+    public NestedBeanMapEntry() {
+    }
 
-  public Integer getKeya() {
-    return keya;
-  }
+    public NestedBeanMapEntry(Integer keya, Boolean keyb, Integer valuea, Boolean valueb) {
+        this.keya = keya;
+        this.keyb = keyb;
+        this.valuea = valuea;
+        this.valueb = valueb;
+    }
 
-  public void setKeya(Integer keya) {
-    this.keya = keya;
-  }
+    public Integer getKeya() {
+        return keya;
+    }
 
-  public Boolean getKeyb() {
-    return keyb;
-  }
+    public void setKeya(Integer keya) {
+        this.keya = keya;
+    }
 
-  public void setKeyb(Boolean keyb) {
-    this.keyb = keyb;
-  }
+    public Boolean getKeyb() {
+        return keyb;
+    }
 
-  public Integer getValuea() {
-    return valuea;
-  }
+    public void setKeyb(Boolean keyb) {
+        this.keyb = keyb;
+    }
 
-  public void setValuea(Integer valuea) {
-    this.valuea = valuea;
-  }
+    public Integer getValuea() {
+        return valuea;
+    }
 
-  public Boolean getValueb() {
-    return valueb;
-  }
+    public void setValuea(Integer valuea) {
+        this.valuea = valuea;
+    }
 
-  public void setValueb(Boolean valueb) {
-    this.valueb = valueb;
-  }
+    public Boolean getValueb() {
+        return valueb;
+    }
 
-  @Override
-  public boolean equals(Object o) {
-    if (this == o)
-      return true;
-    if (o == null || getClass() != o.getClass())
-      return false;
+    public void setValueb(Boolean valueb) {
+        this.valueb = valueb;
+    }
 
-    NestedBeanMapEntry map3Entry = (NestedBeanMapEntry) o;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
 
-    if (! Objects.equals(keya, map3Entry.keya))
-      return false;
-    if (! Objects.equals(keyb, map3Entry.keyb))
-      return false;
-    if (! Objects.equals(valuea, map3Entry.valuea))
-      return false;
-    if (! Objects.equals(valueb, map3Entry.valueb))
-      return false;
+        NestedBeanMapEntry map3Entry = (NestedBeanMapEntry) o;
 
-    return true;
-  }
+        if (!Objects.equals(keya, map3Entry.keya))
+            return false;
+        if (!Objects.equals(keyb, map3Entry.keyb))
+            return false;
+        if (!Objects.equals(valuea, map3Entry.valuea))
+            return false;
+        if (!Objects.equals(valueb, map3Entry.valueb))
+            return false;
 
-  @Override
-  public int hashCode() {
-    int result = keya != null ? keya.hashCode() : 0;
-    result = 31 * result + (valuea != null ? valuea.hashCode() : 0);
-    result = 31 * result + (keyb != null ? keyb.hashCode() : 0);
-    result = 31 * result + (valueb != null ? valueb.hashCode() : 0);
-    return result;
-  }
+        return true;
+    }
 
-  @Override
-  public String toString() {
-    return "NestedBeanMapEntry{" + "keya=" + keya + ", valuea=" + valuea + ", keyb=" + keyb + ", valueb=" + valueb + '}';
-  }
+    @Override
+    public int hashCode() {
+        int result = keya != null ? keya.hashCode() : 0;
+        result = 31 * result + (valuea != null ? valuea.hashCode() : 0);
+        result = 31 * result + (keyb != null ? keyb.hashCode() : 0);
+        result = 31 * result + (valueb != null ? valueb.hashCode() : 0);
+        return result;
+    }
 
-  private Integer keya;
-  private Boolean keyb;
-  private Integer valuea;
-  private Boolean valueb;
+    @Override
+    public String toString() {
+        return "NestedBeanMapEntry{" + "keya=" + keya + ", valuea=" + valuea + ", keyb=" + keyb + ", valueb=" + valueb
+                + '}';
+    }
+
+    private Integer keya;
+
+    private Boolean keyb;
+
+    private Integer valuea;
+
+    private Boolean valueb;
+
 }

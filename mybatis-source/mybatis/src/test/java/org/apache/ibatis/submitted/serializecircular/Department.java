@@ -19,34 +19,36 @@ import java.io.Serializable;
 
 public class Department implements Serializable {
 
-  private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-  private Integer id;
-  private Attribute attribute;
-  private Person person;
+    private Integer id;
 
-  public Integer getId() {
-    return id;
-  }
+    private Attribute attribute;
 
-  public void setId(Integer id) {
-    this.id = id;
-  }
+    private Person person;
 
-  public void setAttribute(Attribute attribute) {
-    this.attribute = attribute;
-  }
+    public Integer getId() {
+        return id;
+    }
 
-  public Attribute getAttribute() {
-    return attribute;
-  }
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-  public void setPerson(Person person) {
-    this.person = person;
-  }
+    public void setAttribute(Attribute attribute) {
+        this.attribute = attribute;
+    }
 
-  public Person getPerson() {
-    return person;
-  }
+    public Attribute getAttribute() {
+        return attribute;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
+    }
+
+    public Person getPerson() {
+        return person;
+    }
 
 }

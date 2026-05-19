@@ -21,17 +21,20 @@ import org.apache.ibatis.reflection.wrapper.ObjectWrapper;
 import org.apache.ibatis.reflection.wrapper.ObjectWrapperFactory;
 
 public class CustomBeanWrapperFactory implements ObjectWrapperFactory {
-  @Override
-  public boolean hasWrapperFor(Object object) {
-    if (object instanceof Author) {
-      return true;
-    } else {
-      return false;
-    }
-  }
 
-  @Override
-  public ObjectWrapper getWrapperFor(MetaObject metaObject, Object object) {
-    return new CustomBeanWrapper(metaObject, object);
-  }
+    @Override
+    public boolean hasWrapperFor(Object object) {
+        if (object instanceof Author) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    @Override
+    public ObjectWrapper getWrapperFor(MetaObject metaObject, Object object) {
+        return new CustomBeanWrapper(metaObject, object);
+    }
+
 }

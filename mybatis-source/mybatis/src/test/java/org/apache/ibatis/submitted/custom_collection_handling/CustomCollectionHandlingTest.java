@@ -39,7 +39,8 @@ class CustomCollectionHandlingTest {
         String xmlConfig = "org/apache/ibatis/submitted/custom_collection_handling/MapperConfig.xml";
         SqlSessionFactory sqlSessionFactory = getSqlSessionFactoryXmlConfig(xmlConfig);
         try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
-            List<Person> list = sqlSession.selectList("org.apache.ibatis.submitted.custom_collection_handling.PersonMapper.findWithResultMap");
+            List<Person> list = sqlSession
+                .selectList("org.apache.ibatis.submitted.custom_collection_handling.PersonMapper.findWithResultMap");
             assertEquals(2, list.size());
             assertEquals(2, list.get(0).getContacts().size());
             assertEquals(1, list.get(1).getContacts().size());
@@ -55,7 +56,8 @@ class CustomCollectionHandlingTest {
         String xmlConfig = "org/apache/ibatis/submitted/custom_collection_handling/MapperConfig.xml";
         SqlSessionFactory sqlSessionFactory = getSqlSessionFactoryXmlConfig(xmlConfig);
         try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
-            List<Person> list = sqlSession.selectList("org.apache.ibatis.submitted.custom_collection_handling.PersonMapper.findWithSelect");
+            List<Person> list = sqlSession
+                .selectList("org.apache.ibatis.submitted.custom_collection_handling.PersonMapper.findWithSelect");
             assertEquals(2, list.size());
             assertEquals(2, list.get(0).getContacts().size());
             assertEquals(1, list.get(1).getContacts().size());
@@ -77,4 +79,5 @@ class CustomCollectionHandlingTest {
         BaseDataTest.runScript(sqlSessionFactory.getConfiguration().getEnvironment().getDataSource(),
                 "org/apache/ibatis/submitted/custom_collection_handling/CreateDB.sql");
     }
+
 }

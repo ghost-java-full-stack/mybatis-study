@@ -25,23 +25,24 @@ import java.lang.annotation.Target;
  * The annotation that specify alias name.
  *
  * <p>
- * <b>How to use:</b>
- * <pre>
+ * <b>How to use:</b> <pre>
  * &#064;Alias("Email")
  * public class UserEmail {
  *   // ...
  * }
  * </pre>
+ *
  * @author Clinton Begin
  */
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 public @interface Alias {
-  /**
-   * Return the alias name.
-   *
-   * @return the alias name
-   */
-  String value();
+
+    /**
+     * Return the alias name.
+     * @return the alias name
+     */
+    String value();
+
 }

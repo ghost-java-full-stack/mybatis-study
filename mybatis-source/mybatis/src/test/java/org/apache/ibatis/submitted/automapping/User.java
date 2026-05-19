@@ -19,41 +19,44 @@ import java.util.List;
 
 public class User {
 
-  private Integer id;
-  private String name;
-  private Long phone; // phone number of Long type
+    private Integer id;
 
-  private List<Pet> pets;
+    private String name;
 
-  public Integer getId() {
-    return id;
-  }
+    private Long phone; // phone number of Long type
 
-  public void setId(Integer id) {
-    this.id = id;
-  }
+    private List<Pet> pets;
 
-  public String getName() {
-    return name;
-  }
+    public Integer getId() {
+        return id;
+    }
 
-  public void setName(String name) {
-    this.name = name;
-  }
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-  public Long getPhone() {
-    return phone;
-  }
+    public String getName() {
+        return name;
+    }
 
-  public void setPhone(Long phone) {
-    this.phone = phone;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public List<Pet> getPets() {
-    return pets;
-  }
+    public Long getPhone() {
+        return phone;
+    }
 
-  public void setPets(List<Pet> pets) {
-    this.pets = pets;
-  }
+    public void setPhone(Long phone) {
+        this.phone = phone;
+    }
+
+    public List<Pet> getPets() {
+        return pets;
+    }
+
+    public void setPets(List<Pet> pets) {
+        this.pets = pets;
+    }
+
 }

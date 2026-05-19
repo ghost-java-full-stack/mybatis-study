@@ -35,32 +35,28 @@ import java.lang.annotation.Target;
 @Target({})
 public @interface Case {
 
-  /**
-   * Return the condition value to apply this mapping.
-   *
-   * @return the condition value
-   */
-  String value();
+    /**
+     * Return the condition value to apply this mapping.
+     * @return the condition value
+     */
+    String value();
 
-  /**
-   * Return the object type that create a object using this mapping.
-   *
-   * @return the object type
-   */
-  Class<?> type();
+    /**
+     * Return the object type that create a object using this mapping.
+     * @return the object type
+     */
+    Class<?> type();
 
-  /**
-   * Return mapping definitions for property.
-   *
-   * @return mapping definitions for property
-   */
-  Result[] results() default {};
+    /**
+     * Return mapping definitions for property.
+     * @return mapping definitions for property
+     */
+    Result[] results() default {};
 
-  /**
-   * Return mapping definitions for constructor.
-   *
-   * @return mapping definitions for constructor
-   */
-  Arg[] constructArgs() default {};
+    /**
+     * Return mapping definitions for constructor.
+     * @return mapping definitions for constructor
+     */
+    Arg[] constructArgs() default {};
 
 }

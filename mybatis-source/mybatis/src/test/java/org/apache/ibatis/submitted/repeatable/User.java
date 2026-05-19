@@ -17,31 +17,34 @@ package org.apache.ibatis.submitted.repeatable;
 
 public class User {
 
-  private Integer id;
-  private String name;
-  private String databaseName;
+    private Integer id;
 
-  public Integer getId() {
-    return id;
-  }
+    private String name;
 
-  public void setId(Integer id) {
-    this.id = id;
-  }
+    private String databaseName;
 
-  public String getName() {
-    return name;
-  }
+    public Integer getId() {
+        return id;
+    }
 
-  public void setName(String name) {
-    this.name = name;
-  }
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-  public String getDatabaseName() {
-    return databaseName;
-  }
+    public String getName() {
+        return name;
+    }
 
-  public void setDatabaseName(String databaseName) {
-    this.databaseName = databaseName;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDatabaseName() {
+        return databaseName;
+    }
+
+    public void setDatabaseName(String databaseName) {
+        this.databaseName = databaseName;
+    }
+
 }

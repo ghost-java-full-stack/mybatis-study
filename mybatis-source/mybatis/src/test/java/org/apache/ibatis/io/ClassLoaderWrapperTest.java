@@ -25,61 +25,66 @@ import org.junit.jupiter.api.Test;
 
 class ClassLoaderWrapperTest extends BaseDataTest {
 
-  private ClassLoaderWrapper wrapper;
-  private ClassLoader loader;
-  private final String RESOURCE_NOT_FOUND = "some_resource_that_does_not_exist.properties";
-  private final String CLASS_NOT_FOUND = "some.random.class.that.does.not.Exist";
-  private final String CLASS_FOUND = "java.lang.Object";
+    private ClassLoaderWrapper wrapper;
 
-  @BeforeEach
-  void beforeClassLoaderWrapperTest() {
-    wrapper = new ClassLoaderWrapper();
-    loader = getClass().getClassLoader();
-  }
+    private ClassLoader loader;
 
-  @Test
-  void classForName() throws ClassNotFoundException {
-    assertNotNull(wrapper.classForName(CLASS_FOUND));
-  }
+    private final String RESOURCE_NOT_FOUND = "some_resource_that_does_not_exist.properties";
 
-  @Test
-  void classForNameNotFound() {
-    Assertions.assertThrows(ClassNotFoundException.class, () -> assertNotNull(wrapper.classForName(CLASS_NOT_FOUND)));
-  }
+    private final String CLASS_NOT_FOUND = "some.random.class.that.does.not.Exist";
 
-  @Test
-  void classForNameWithClassLoader() throws ClassNotFoundException {
-    assertNotNull(wrapper.classForName(CLASS_FOUND, loader));
-  }
+    private final String CLASS_FOUND = "java.lang.Object";
 
-  @Test
-  void getResourceAsURL() {
-    assertNotNull(wrapper.getResourceAsURL(JPETSTORE_PROPERTIES));
-  }
+    @BeforeEach
+    void beforeClassLoaderWrapperTest() {
+        wrapper = new ClassLoaderWrapper();
+        loader = getClass().getClassLoader();
+    }
 
-  @Test
-  void getResourceAsURLNotFound() {
-    assertNull(wrapper.getResourceAsURL(RESOURCE_NOT_FOUND));
-  }
+    @Test
+    void classForName() throws ClassNotFoundException {
+        assertNotNull(wrapper.classForName(CLASS_FOUND));
+    }
 
-  @Test
-  void getResourceAsURLWithClassLoader() {
-    assertNotNull(wrapper.getResourceAsURL(JPETSTORE_PROPERTIES, loader));
-  }
+    @Test
+    void classForNameNotFound() {
+        Assertions.assertThrows(ClassNotFoundException.class,
+                () -> assertNotNull(wrapper.classForName(CLASS_NOT_FOUND)));
+    }
 
-  @Test
-  void getResourceAsStream() {
-    assertNotNull(wrapper.getResourceAsStream(JPETSTORE_PROPERTIES));
-  }
+    @Test
+    void classForNameWithClassLoader() throws ClassNotFoundException {
+        assertNotNull(wrapper.classForName(CLASS_FOUND, loader));
+    }
 
-  @Test
-  void getResourceAsStreamNotFound() {
-    assertNull(wrapper.getResourceAsStream(RESOURCE_NOT_FOUND));
-  }
+    @Test
+    void getResourceAsURL() {
+        assertNotNull(wrapper.getResourceAsURL(JPETSTORE_PROPERTIES));
+    }
 
-  @Test
-  void getResourceAsStreamWithClassLoader() {
-    assertNotNull(wrapper.getResourceAsStream(JPETSTORE_PROPERTIES, loader));
-  }
+    @Test
+    void getResourceAsURLNotFound() {
+        assertNull(wrapper.getResourceAsURL(RESOURCE_NOT_FOUND));
+    }
+
+    @Test
+    void getResourceAsURLWithClassLoader() {
+        assertNotNull(wrapper.getResourceAsURL(JPETSTORE_PROPERTIES, loader));
+    }
+
+    @Test
+    void getResourceAsStream() {
+        assertNotNull(wrapper.getResourceAsStream(JPETSTORE_PROPERTIES));
+    }
+
+    @Test
+    void getResourceAsStreamNotFound() {
+        assertNull(wrapper.getResourceAsStream(RESOURCE_NOT_FOUND));
+    }
+
+    @Test
+    void getResourceAsStreamWithClassLoader() {
+        assertNotNull(wrapper.getResourceAsStream(JPETSTORE_PROPERTIES, loader));
+    }
 
 }

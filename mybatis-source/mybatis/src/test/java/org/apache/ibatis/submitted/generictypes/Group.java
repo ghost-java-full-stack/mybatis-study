@@ -19,32 +19,34 @@ import java.util.List;
 
 public class Group {
 
-  private Integer id;
-  private User<String> owner;
-  private List<String> members;
+    private Integer id;
 
-  public Integer getId() {
-    return id;
-  }
+    private User<String> owner;
 
-  public void setId(Integer id) {
-    this.id = id;
-  }
+    private List<String> members;
 
-  public User<String> getOwner() {
-    return owner;
-  }
+    public Integer getId() {
+        return id;
+    }
 
-  public void setOwner(User<String> owner) {
-    this.owner = owner;
-  }
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-  public List<String> getMembers() {
-    return members;
-  }
+    public User<String> getOwner() {
+        return owner;
+    }
 
-  public void setMembers(List<String> members) {
-    this.members = members;
-  }
+    public void setOwner(User<String> owner) {
+        this.owner = owner;
+    }
+
+    public List<String> getMembers() {
+        return members;
+    }
+
+    public void setMembers(List<String> members) {
+        this.members = members;
+    }
 
 }

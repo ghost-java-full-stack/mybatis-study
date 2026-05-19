@@ -17,31 +17,34 @@ package org.apache.ibatis.submitted.constructor_automapping;
 
 public class Article {
 
-  private Integer id;
-  private String title;
-  private Author author;
+    private Integer id;
 
-  public Integer getId() {
-    return id;
-  }
+    private String title;
 
-  public void setId(Integer id) {
-    this.id = id;
-  }
+    private Author author;
 
-  public String getTitle() {
-    return title;
-  }
+    public Integer getId() {
+        return id;
+    }
 
-  public void setTitle(String title) {
-    this.title = title;
-  }
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-  public Author getAuthor() {
-    return author;
-  }
+    public String getTitle() {
+        return title;
+    }
 
-  public void setAuthor(Author author) {
-    this.author = author;
-  }
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
+    }
+
 }

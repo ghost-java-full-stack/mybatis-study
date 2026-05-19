@@ -17,31 +17,34 @@ package org.apache.ibatis.submitted.array_type_handler;
 
 public class User {
 
-  private Integer id;
-  private String name;
-  private String[] nicknames;
+    private Integer id;
 
-  public Integer getId() {
-    return id;
-  }
+    private String name;
 
-  public void setId(Integer id) {
-    this.id = id;
-  }
+    private String[] nicknames;
 
-  public String getName() {
-    return name;
-  }
+    public Integer getId() {
+        return id;
+    }
 
-  public void setName(String name) {
-    this.name = name;
-  }
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-  public String[] getNicknames() {
-    return nicknames;
-  }
+    public String getName() {
+        return name;
+    }
 
-  public void setNicknames(String[] nicknames) {
-    this.nicknames = nicknames;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String[] getNicknames() {
+        return nicknames;
+    }
+
+    public void setNicknames(String[] nicknames) {
+        this.nicknames = nicknames;
+    }
+
 }

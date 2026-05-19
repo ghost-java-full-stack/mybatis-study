@@ -17,31 +17,34 @@ package org.apache.ibatis.submitted.typehandlerinjection;
 
 public class User {
 
-  private Integer id;
-  private String name;
-  private String state;
+    private Integer id;
 
-  public String getState() {
-    return state;
-  }
+    private String name;
 
-  public void setState(String state) {
-    this.state = state;
-  }
+    private String state;
 
-  public Integer getId() {
-    return id;
-  }
+    public String getState() {
+        return state;
+    }
 
-  public void setId(Integer id) {
-    this.id = id;
-  }
+    public void setState(String state) {
+        this.state = state;
+    }
 
-  public String getName() {
-    return name;
-  }
+    public Integer getId() {
+        return id;
+    }
 
-  public void setName(String name) {
-    this.name = name;
-  }
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
 }

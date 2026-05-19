@@ -21,153 +21,168 @@ import org.apache.ibatis.cache.impl.PerpetualCache;
 
 public class CustomCache extends PerpetualCache {
 
-  private String stringValue;
-  private Integer integerValue;
-  private int intValue;
-  private Long longWrapperValue;
-  private long longValue;
-  private Short shortWrapperValue;
-  private short shortValue;
-  private Float floatWrapperValue;
-  private float floatValue;
-  private Double doubleWrapperValue;
-  private double doubleValue;
-  private Byte byteWrapperValue;
-  private byte byteValue;
-  private Boolean booleanWrapperValue;
-  private boolean booleanValue;
-  private Date date;
+    private String stringValue;
 
-  public CustomCache(String id) {
-    super(id);
-  }
+    private Integer integerValue;
 
-  public String getStringValue() {
-    return stringValue;
-  }
+    private int intValue;
 
-  public void setStringValue(String stringValue) {
-    this.stringValue = stringValue;
-  }
+    private Long longWrapperValue;
 
-  public Integer getIntegerValue() {
-    return integerValue;
-  }
+    private long longValue;
 
-  public void setIntegerValue(Integer integerValue) {
-    this.integerValue = integerValue;
-  }
+    private Short shortWrapperValue;
 
-  public long getLongValue() {
-    return longValue;
-  }
+    private short shortValue;
 
-  public void setLongValue(long longValue) {
-    this.longValue = longValue;
-  }
+    private Float floatWrapperValue;
 
-  public int getIntValue() {
-    return intValue;
-  }
+    private float floatValue;
 
-  public void setIntValue(int intValue) {
-    this.intValue = intValue;
-  }
+    private Double doubleWrapperValue;
 
-  public Long getLongWrapperValue() {
-    return longWrapperValue;
-  }
+    private double doubleValue;
 
-  public void setLongWrapperValue(Long longWrapperValue) {
-    this.longWrapperValue = longWrapperValue;
-  }
+    private Byte byteWrapperValue;
 
-  public Short getShortWrapperValue() {
-    return shortWrapperValue;
-  }
+    private byte byteValue;
 
-  public void setShortWrapperValue(Short shortWrapperValue) {
-    this.shortWrapperValue = shortWrapperValue;
-  }
+    private Boolean booleanWrapperValue;
 
-  public short getShortValue() {
-    return shortValue;
-  }
+    private boolean booleanValue;
 
-  public void setShortValue(short shortValue) {
-    this.shortValue = shortValue;
-  }
+    private Date date;
 
-  public Float getFloatWrapperValue() {
-    return floatWrapperValue;
-  }
+    public CustomCache(String id) {
+        super(id);
+    }
 
-  public void setFloatWrapperValue(Float floatWrapperValue) {
-    this.floatWrapperValue = floatWrapperValue;
-  }
+    public String getStringValue() {
+        return stringValue;
+    }
 
-  public float getFloatValue() {
-    return floatValue;
-  }
+    public void setStringValue(String stringValue) {
+        this.stringValue = stringValue;
+    }
 
-  public void setFloatValue(float floatValue) {
-    this.floatValue = floatValue;
-  }
+    public Integer getIntegerValue() {
+        return integerValue;
+    }
 
-  public Double getDoubleWrapperValue() {
-    return doubleWrapperValue;
-  }
+    public void setIntegerValue(Integer integerValue) {
+        this.integerValue = integerValue;
+    }
 
-  public void setDoubleWrapperValue(Double doubleWrapperValue) {
-    this.doubleWrapperValue = doubleWrapperValue;
-  }
+    public long getLongValue() {
+        return longValue;
+    }
 
-  public double getDoubleValue() {
-    return doubleValue;
-  }
+    public void setLongValue(long longValue) {
+        this.longValue = longValue;
+    }
 
-  public void setDoubleValue(double doubleValue) {
-    this.doubleValue = doubleValue;
-  }
+    public int getIntValue() {
+        return intValue;
+    }
 
-  public Byte getByteWrapperValue() {
-    return byteWrapperValue;
-  }
+    public void setIntValue(int intValue) {
+        this.intValue = intValue;
+    }
 
-  public void setByteWrapperValue(Byte byteWrapperValue) {
-    this.byteWrapperValue = byteWrapperValue;
-  }
+    public Long getLongWrapperValue() {
+        return longWrapperValue;
+    }
 
-  public byte getByteValue() {
-    return byteValue;
-  }
+    public void setLongWrapperValue(Long longWrapperValue) {
+        this.longWrapperValue = longWrapperValue;
+    }
 
-  public void setByteValue(byte byteValue) {
-    this.byteValue = byteValue;
-  }
+    public Short getShortWrapperValue() {
+        return shortWrapperValue;
+    }
 
-  public Boolean getBooleanWrapperValue() {
-    return booleanWrapperValue;
-  }
+    public void setShortWrapperValue(Short shortWrapperValue) {
+        this.shortWrapperValue = shortWrapperValue;
+    }
 
-  public void setBooleanWrapperValue(Boolean booleanWrapperValue) {
-    this.booleanWrapperValue = booleanWrapperValue;
-  }
+    public short getShortValue() {
+        return shortValue;
+    }
 
-  public boolean isBooleanValue() {
-    return booleanValue;
-  }
+    public void setShortValue(short shortValue) {
+        this.shortValue = shortValue;
+    }
 
-  public void setBooleanValue(boolean booleanValue) {
-    this.booleanValue = booleanValue;
-  }
+    public Float getFloatWrapperValue() {
+        return floatWrapperValue;
+    }
 
-  public Date getDate() {
-    return date;
-  }
+    public void setFloatWrapperValue(Float floatWrapperValue) {
+        this.floatWrapperValue = floatWrapperValue;
+    }
 
-  public void setDate(Date date) {
-    this.date = date;
-  }
+    public float getFloatValue() {
+        return floatValue;
+    }
+
+    public void setFloatValue(float floatValue) {
+        this.floatValue = floatValue;
+    }
+
+    public Double getDoubleWrapperValue() {
+        return doubleWrapperValue;
+    }
+
+    public void setDoubleWrapperValue(Double doubleWrapperValue) {
+        this.doubleWrapperValue = doubleWrapperValue;
+    }
+
+    public double getDoubleValue() {
+        return doubleValue;
+    }
+
+    public void setDoubleValue(double doubleValue) {
+        this.doubleValue = doubleValue;
+    }
+
+    public Byte getByteWrapperValue() {
+        return byteWrapperValue;
+    }
+
+    public void setByteWrapperValue(Byte byteWrapperValue) {
+        this.byteWrapperValue = byteWrapperValue;
+    }
+
+    public byte getByteValue() {
+        return byteValue;
+    }
+
+    public void setByteValue(byte byteValue) {
+        this.byteValue = byteValue;
+    }
+
+    public Boolean getBooleanWrapperValue() {
+        return booleanWrapperValue;
+    }
+
+    public void setBooleanWrapperValue(Boolean booleanWrapperValue) {
+        this.booleanWrapperValue = booleanWrapperValue;
+    }
+
+    public boolean isBooleanValue() {
+        return booleanValue;
+    }
+
+    public void setBooleanValue(boolean booleanValue) {
+        this.booleanValue = booleanValue;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
 
 }

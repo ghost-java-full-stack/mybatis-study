@@ -16,23 +16,25 @@
 package org.apache.ibatis.submitted.postgres_genkeys;
 
 public class User {
-  private Integer userId;
 
-  private String name;
+    private Integer userId;
 
-  public Integer getUserId() {
-    return userId;
-  }
+    private String name;
 
-  public void setUserId(Integer userId) {
-    this.userId = userId;
-  }
+    public Integer getUserId() {
+        return userId;
+    }
 
-  public String getName() {
-    return name;
-  }
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
 
-  public void setName(String name) {
-    this.name = name;
-  }
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
 }

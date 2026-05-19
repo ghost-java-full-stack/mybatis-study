@@ -16,31 +16,35 @@
 package org.apache.ibatis.submitted.sptests;
 
 public class Book {
-  private Integer id;
-  private String name;
-  private Genre genre;
 
-  public Integer getId() {
-    return id;
-  }
+    private Integer id;
 
-  public void setId(Integer id) {
-    this.id = id;
-  }
+    private String name;
 
-  public String getName() {
-    return name;
-  }
+    private Genre genre;
 
-  public void setName(String name) {
-    this.name = name;
-  }
+    public Integer getId() {
+        return id;
+    }
 
-  public Genre getGenre() {
-    return genre;
-  }
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-  public void setGenre(Genre genre) {
-    this.genre = genre;
-  }
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Genre getGenre() {
+        return genre;
+    }
+
+    public void setGenre(Genre genre) {
+        this.genre = genre;
+    }
+
 }

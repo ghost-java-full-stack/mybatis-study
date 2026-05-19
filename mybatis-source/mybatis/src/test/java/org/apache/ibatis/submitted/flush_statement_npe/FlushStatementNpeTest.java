@@ -32,7 +32,8 @@ class FlushStatementNpeTest {
 
     @BeforeAll
     static void initDatabase() throws Exception {
-        try (Reader reader = Resources.getResourceAsReader("org/apache/ibatis/submitted/flush_statement_npe/ibatisConfig.xml")) {
+        try (Reader reader = Resources
+            .getResourceAsReader("org/apache/ibatis/submitted/flush_statement_npe/ibatisConfig.xml")) {
             sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
         }
 
@@ -56,6 +57,7 @@ class FlushStatementNpeTest {
             sqlSession.commit();
         }
     }
+
     @Test
     void testSameUpdateAfterCommitReuse() {
         try (SqlSession sqlSession = sqlSessionFactory.openSession(ExecutorType.REUSE)) {
@@ -72,6 +74,7 @@ class FlushStatementNpeTest {
             sqlSession.commit();
         }
     }
+
     @Test
     void testSameUpdateAfterCommitBatch() {
         try (SqlSession sqlSession = sqlSessionFactory.openSession(ExecutorType.BATCH)) {
@@ -88,4 +91,5 @@ class FlushStatementNpeTest {
             sqlSession.commit();
         }
     }
+
 }

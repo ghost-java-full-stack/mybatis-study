@@ -18,9 +18,11 @@ package org.apache.ibatis.submitted.blobtest;
 import java.util.List;
 
 public interface BlobMapper {
-  int insert(BlobRecord blobRecord);
 
-  List<BlobRecord> selectAll();
+    int insert(BlobRecord blobRecord);
 
-  List<BlobRecord> selectAllWithBlobObjects();
+    List<BlobRecord> selectAll();
+
+    List<BlobRecord> selectAllWithBlobObjects();
+
 }

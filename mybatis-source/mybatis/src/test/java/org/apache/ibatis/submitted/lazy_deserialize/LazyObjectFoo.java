@@ -23,24 +23,26 @@ import java.io.Serializable;
  */
 public class LazyObjectFoo implements Serializable {
 
-  private static final long serialVersionUID = 1L;
-  private Integer id;
-  private LazyObjectBar lazyObjectBar;
+    private static final long serialVersionUID = 1L;
 
-  public Integer getId() {
-    return id;
-  }
+    private Integer id;
 
-  public void setId(Integer id) {
-    this.id = id;
-  }
+    private LazyObjectBar lazyObjectBar;
 
-  public LazyObjectBar getLazyObjectBar() {
-    return this.lazyObjectBar;
-  }
+    public Integer getId() {
+        return id;
+    }
 
-  public void setLazyObjectBar(final LazyObjectBar lazyObjectBar) {
-    this.lazyObjectBar = lazyObjectBar;
-  }
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public LazyObjectBar getLazyObjectBar() {
+        return this.lazyObjectBar;
+    }
+
+    public void setLazyObjectBar(final LazyObjectBar lazyObjectBar) {
+        this.lazyObjectBar = lazyObjectBar;
+    }
 
 }

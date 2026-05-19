@@ -19,50 +19,49 @@ import java.util.List;
 
 public class User {
 
-  private Integer id;
-  private String name;
-  private List<String> groups;
-  private List<String> roles;
+    private Integer id;
 
-  public List<String> getRoles() {
-    return roles;
-  }
+    private String name;
 
-  public void setRoles(List<String> roles) {
-    this.roles = roles;
-  }
+    private List<String> groups;
 
-  public List<String> getGroups() {
-    return groups;
-  }
+    private List<String> roles;
 
-  public void setGroups(List<String> groups) {
-    this.groups = groups;
-  }
+    public List<String> getRoles() {
+        return roles;
+    }
 
-  public Integer getId() {
-    return id;
-  }
+    public void setRoles(List<String> roles) {
+        this.roles = roles;
+    }
 
-  public void setId(Integer id) {
-    this.id = id;
-  }
+    public List<String> getGroups() {
+        return groups;
+    }
 
-  public String getName() {
-    return name;
-  }
+    public void setGroups(List<String> groups) {
+        this.groups = groups;
+    }
 
-  public void setName(String name) {
-    this.name = name;
-  }
+    public Integer getId() {
+        return id;
+    }
 
-  @Override
-  public String toString() {
-    return "User{" +
-            "id=" + id +
-            ", name='" + name + '\'' +
-            ", groups=" + groups +
-            ", roles=" + roles +
-            '}';
-  }
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" + "id=" + id + ", name='" + name + '\'' + ", groups=" + groups + ", roles=" + roles + '}';
+    }
+
 }

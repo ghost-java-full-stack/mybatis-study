@@ -23,12 +23,13 @@ import org.junit.jupiter.api.Test;
 
 class IdConflictTest {
 
-  @Test
-  void shouldFailOnDuplicatedId() {
-    Configuration configuration = new Configuration();
-    when(() -> configuration.addMapper(IdConflictMapper.class));
-    then(caughtException()).isInstanceOf(RuntimeException.class).hasMessage(
-        "Result Maps collection already contains value for org.apache.ibatis.submitted.results_id.IdConflictMapper.userResult");
-  }
+    @Test
+    void shouldFailOnDuplicatedId() {
+        Configuration configuration = new Configuration();
+        when(() -> configuration.addMapper(IdConflictMapper.class));
+        then(caughtException()).isInstanceOf(RuntimeException.class)
+            .hasMessage(
+                    "Result Maps collection already contains value for org.apache.ibatis.submitted.results_id.IdConflictMapper.userResult");
+    }
 
 }

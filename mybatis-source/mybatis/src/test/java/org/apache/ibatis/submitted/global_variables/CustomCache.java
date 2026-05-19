@@ -19,36 +19,38 @@ import org.apache.ibatis.cache.impl.PerpetualCache;
 
 public class CustomCache extends PerpetualCache {
 
-  private String stringValue;
-  private Integer integerValue;
-  private long longValue;
+    private String stringValue;
 
-  public CustomCache(String id) {
-    super(id);
-  }
+    private Integer integerValue;
 
-  public String getStringValue() {
-    return stringValue;
-  }
+    private long longValue;
 
-  public void setStringValue(String stringValue) {
-    this.stringValue = stringValue;
-  }
+    public CustomCache(String id) {
+        super(id);
+    }
 
-  public Integer getIntegerValue() {
-    return integerValue;
-  }
+    public String getStringValue() {
+        return stringValue;
+    }
 
-  public void setIntegerValue(Integer integerValue) {
-    this.integerValue = integerValue;
-  }
+    public void setStringValue(String stringValue) {
+        this.stringValue = stringValue;
+    }
 
-  public long getLongValue() {
-    return longValue;
-  }
+    public Integer getIntegerValue() {
+        return integerValue;
+    }
 
-  public void setLongValue(long longValue) {
-    this.longValue = longValue;
-  }
+    public void setIntegerValue(Integer integerValue) {
+        this.integerValue = integerValue;
+    }
+
+    public long getLongValue() {
+        return longValue;
+    }
+
+    public void setLongValue(long longValue) {
+        this.longValue = longValue;
+    }
 
 }

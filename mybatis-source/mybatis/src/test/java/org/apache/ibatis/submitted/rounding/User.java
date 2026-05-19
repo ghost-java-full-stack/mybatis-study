@@ -20,41 +20,44 @@ import java.math.RoundingMode;
 
 public class User {
 
-  private Integer id;
-  private String name;
-  private BigDecimal funkyNumber;
-  private RoundingMode roundingMode;
+    private Integer id;
 
-  public Integer getId() {
-    return id;
-  }
+    private String name;
 
-  public void setId(Integer id) {
-    this.id = id;
-  }
+    private BigDecimal funkyNumber;
 
-  public String getName() {
-    return name;
-  }
+    private RoundingMode roundingMode;
 
-  public void setName(String name) {
-    this.name = name;
-  }
+    public Integer getId() {
+        return id;
+    }
 
-  public BigDecimal getFunkyNumber() {
-    return funkyNumber;
-  }
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-  public void setFunkyNumber(BigDecimal big) {
-    funkyNumber = big;
-  }
+    public String getName() {
+        return name;
+    }
 
-  public RoundingMode getRoundingMode() {
-    return roundingMode;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setRoundingMode(RoundingMode mode) {
-    roundingMode = mode;
-  }
+    public BigDecimal getFunkyNumber() {
+        return funkyNumber;
+    }
+
+    public void setFunkyNumber(BigDecimal big) {
+        funkyNumber = big;
+    }
+
+    public RoundingMode getRoundingMode() {
+        return roundingMode;
+    }
+
+    public void setRoundingMode(RoundingMode mode) {
+        roundingMode = mode;
+    }
 
 }

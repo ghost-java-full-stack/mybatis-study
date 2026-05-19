@@ -19,17 +19,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Parameter {
-  private List<Name> names;
 
-  public Parameter() {
-    names = new ArrayList<>();
-  }
+    private List<Name> names;
 
-  public List<Name> getNames() {
-    return names;
-  }
+    public Parameter() {
+        names = new ArrayList<>();
+    }
 
-  public void addName(Name name) {
-    names.add(name);
-  }
+    public List<Name> getNames() {
+        return names;
+    }
+
+    public void addName(Name name) {
+        names.add(name);
+    }
+
 }

@@ -19,23 +19,26 @@ import java.io.Serializable;
 
 public class User implements Serializable {
 
-  private static final long serialVersionUID = 2636291819488700444L;
-  private Integer id;
-  private String name;
+    private static final long serialVersionUID = 2636291819488700444L;
 
-  public Integer getId() {
-    return id;
-  }
+    private Integer id;
 
-  public void setId(Integer id) {
-    this.id = id;
-  }
+    private String name;
 
-  public String getName() {
-    return name;
-  }
+    public Integer getId() {
+        return id;
+    }
 
-  public void setName(String name) {
-    this.name = name;
-  }
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
 }

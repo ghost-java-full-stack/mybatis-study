@@ -19,50 +19,54 @@ import java.util.List;
 
 public class ProductResp {
 
-  private String id;
-  private String code;
-  private String name;
-  private List<ProductSku> skus;
-  private ProductInfo productInfo;
+    private String id;
 
-  public String getId() {
-    return id;
-  }
+    private String code;
 
-  public void setId(String id) {
-    this.id = id;
-  }
+    private String name;
 
-  public String getCode() {
-    return code;
-  }
+    private List<ProductSku> skus;
 
-  public void setCode(String code) {
-    this.code = code;
-  }
+    private ProductInfo productInfo;
 
-  public String getName() {
-    return name;
-  }
+    public String getId() {
+        return id;
+    }
 
-  public void setName(String name) {
-    this.name = name;
-  }
+    public void setId(String id) {
+        this.id = id;
+    }
 
-  public List<ProductSku> getSkus() {
-    return skus;
-  }
+    public String getCode() {
+        return code;
+    }
 
-  public void setSkus(List<ProductSku> skus) {
-    this.skus = skus;
-  }
+    public void setCode(String code) {
+        this.code = code;
+    }
 
-  public ProductInfo getProductInfo() {
-    return productInfo;
-  }
+    public String getName() {
+        return name;
+    }
 
-  public void setProductInfo(ProductInfo productInfo) {
-    this.productInfo = productInfo;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public List<ProductSku> getSkus() {
+        return skus;
+    }
+
+    public void setSkus(List<ProductSku> skus) {
+        this.skus = skus;
+    }
+
+    public ProductInfo getProductInfo() {
+        return productInfo;
+    }
+
+    public void setProductInfo(ProductInfo productInfo) {
+        this.productInfo = productInfo;
+    }
 
 }

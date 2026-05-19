@@ -16,31 +16,35 @@
 package org.apache.ibatis.submitted.not_null_column;
 
 public class Child extends Base {
-  private Integer id;
-  private Integer fatherId;
-  private String name;
 
-  public Integer getId() {
-    return id;
-  }
+    private Integer id;
 
-  public void setId(Integer id) {
-    this.id = id;
-  }
+    private Integer fatherId;
 
-  public String getName() {
-    return name;
-  }
+    private String name;
 
-  public void setName(String name) {
-    this.name = name;
-  }
+    public Integer getId() {
+        return id;
+    }
 
-  public Integer getFatherId() {
-    return fatherId;
-  }
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-  public void setFatherId(Integer fatherId) {
-    this.fatherId = fatherId;
-  }
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getFatherId() {
+        return fatherId;
+    }
+
+    public void setFatherId(Integer fatherId) {
+        this.fatherId = fatherId;
+    }
+
 }

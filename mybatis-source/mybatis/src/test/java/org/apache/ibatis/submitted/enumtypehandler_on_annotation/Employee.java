@@ -20,4 +20,5 @@ package org.apache.ibatis.submitted.enumtypehandler_on_annotation;
  * @author Kazuki Shimizu
  */
 public class Employee extends Person {
+
 }

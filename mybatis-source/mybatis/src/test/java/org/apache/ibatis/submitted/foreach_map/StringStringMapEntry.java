@@ -16,59 +16,62 @@
 package org.apache.ibatis.submitted.foreach_map;
 
 public class StringStringMapEntry {
-  public StringStringMapEntry() {
-  }
 
-  public StringStringMapEntry(String key, String value) {
-    this.key = key;
-    this.value = value;
-  }
+    public StringStringMapEntry() {
+    }
 
-  public Object getKey() {
-    return key;
-  }
+    public StringStringMapEntry(String key, String value) {
+        this.key = key;
+        this.value = value;
+    }
 
-  public void setKey(String key) {
-    this.key = key;
-  }
+    public Object getKey() {
+        return key;
+    }
 
-  public String getValue() {
-    return value;
-  }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-  public void setValue(String value) {
-    this.value = value;
-  }
+    public String getValue() {
+        return value;
+    }
 
-  @Override
-  public boolean equals(Object o) {
-    if (this == o)
-      return true;
-    if (o == null || getClass() != o.getClass())
-      return false;
+    public void setValue(String value) {
+        this.value = value;
+    }
 
-    StringStringMapEntry mapEntry = (StringStringMapEntry) o;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
 
-    if (key != null ? !key.equals(mapEntry.key) : mapEntry.key != null)
-      return false;
-    if (value != null ? !value.equals(mapEntry.value) : mapEntry.value != null)
-      return false;
+        StringStringMapEntry mapEntry = (StringStringMapEntry) o;
 
-    return true;
-  }
+        if (key != null ? !key.equals(mapEntry.key) : mapEntry.key != null)
+            return false;
+        if (value != null ? !value.equals(mapEntry.value) : mapEntry.value != null)
+            return false;
 
-  @Override
-  public int hashCode() {
-    int result = key != null ? key.hashCode() : 0;
-    result = 31 * result + (value != null ? value.hashCode() : 0);
-    return result;
-  }
+        return true;
+    }
 
-  @Override
-  public String toString() {
-    return '{' + key.toString() + '=' + value + '}';
-  }
+    @Override
+    public int hashCode() {
+        int result = key != null ? key.hashCode() : 0;
+        result = 31 * result + (value != null ? value.hashCode() : 0);
+        return result;
+    }
 
-  private String key;
-  private String value;
+    @Override
+    public String toString() {
+        return '{' + key.toString() + '=' + value + '}';
+    }
+
+    private String key;
+
+    private String value;
+
 }

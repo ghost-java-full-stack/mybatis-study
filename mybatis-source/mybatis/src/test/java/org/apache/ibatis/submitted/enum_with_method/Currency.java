@@ -34,4 +34,5 @@ public enum Currency {
     };
 
     public abstract BigDecimal getExchange();
+
 }

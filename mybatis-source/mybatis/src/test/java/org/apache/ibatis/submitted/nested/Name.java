@@ -19,26 +19,29 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Name {
-  private String lastName;
-  private List<String> firstNames;
 
-  public Name() {
-    firstNames = new ArrayList<>();
-  }
+    private String lastName;
 
-  public String getLastName() {
-    return lastName;
-  }
+    private List<String> firstNames;
 
-  public void setLastName(String lastName) {
-    this.lastName = lastName;
-  }
+    public Name() {
+        firstNames = new ArrayList<>();
+    }
 
-  public List<String> getFirstNames() {
-    return firstNames;
-  }
+    public String getLastName() {
+        return lastName;
+    }
 
-  public void addFirstName(String firstName) {
-    firstNames.add(firstName);
-  }
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public List<String> getFirstNames() {
+        return firstNames;
+    }
+
+    public void addFirstName(String firstName) {
+        firstNames.add(firstName);
+    }
+
 }

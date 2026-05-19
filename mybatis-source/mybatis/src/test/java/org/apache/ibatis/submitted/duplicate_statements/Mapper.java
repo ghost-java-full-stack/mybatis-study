@@ -21,7 +21,8 @@ import org.apache.ibatis.session.RowBounds;
 
 public interface Mapper {
 
-  List<User> getAllUsers();
+    List<User> getAllUsers();
 
-  List<User> getAllUsers(RowBounds rowBounds);
+    List<User> getAllUsers(RowBounds rowBounds);
+
 }

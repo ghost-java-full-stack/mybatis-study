@@ -33,119 +33,122 @@ import org.junit.jupiter.api.Test;
  */
 
 class ResolverUtilTest {
-  private static ClassLoader currentContextClassLoader;
 
-  @BeforeAll
-  static void setUp() {
-    currentContextClassLoader = Thread.currentThread().getContextClassLoader();
-  }
+    private static ClassLoader currentContextClassLoader;
 
-  @Test
-  void getClasses() {
-    assertEquals(new ResolverUtil<>().getClasses().size(), 0);
-  }
+    @BeforeAll
+    static void setUp() {
+        currentContextClassLoader = Thread.currentThread().getContextClassLoader();
+    }
 
-  @Test
-  void getClassLoader() {
-    assertEquals(new ResolverUtil<>().getClassLoader(), currentContextClassLoader);
-  }
+    @Test
+    void getClasses() {
+        assertEquals(new ResolverUtil<>().getClasses().size(), 0);
+    }
 
-  @Test
-  void setClassLoader() {
-    ResolverUtil resolverUtil = new ResolverUtil();
-    AccessController.doPrivileged((PrivilegedAction<Void>) () -> {
-      resolverUtil.setClassLoader(new ClassLoader() {
-      });
-      return null;
-    });
-    assertNotEquals(resolverUtil.getClassLoader(), currentContextClassLoader);
-  }
+    @Test
+    void getClassLoader() {
+        assertEquals(new ResolverUtil<>().getClassLoader(), currentContextClassLoader);
+    }
 
-  @Test
-  void findImplementationsWithNullPackageName() {
-    ResolverUtil<VFS> resolverUtil = new ResolverUtil<>();
-    resolverUtil.findImplementations(VFS.class, null);
-    assertEquals(resolverUtil.getClasses().size(), 0);
-  }
+    @Test
+    void setClassLoader() {
+        ResolverUtil resolverUtil = new ResolverUtil();
+        AccessController.doPrivileged((PrivilegedAction<Void>) () -> {
+            resolverUtil.setClassLoader(new ClassLoader() {
+            });
+            return null;
+        });
+        assertNotEquals(resolverUtil.getClassLoader(), currentContextClassLoader);
+    }
 
-  @Test
-  void findImplementations() {
-    ResolverUtil<VFS> resolverUtil = new ResolverUtil<>();
-    resolverUtil.findImplementations(VFS.class, "org.apache.ibatis.io");
-    Set<Class<? extends VFS>> classSets = resolverUtil.getClasses();
-    //org.apache.ibatis.io.VFS
-    //org.apache.ibatis.io.DefaultVFS
-    //org.apache.ibatis.io.JBoss6VFS
-    assertEquals(classSets.size(), 3); //fail if add a new VFS implementation in this package!!!
-    classSets.forEach(c -> assertTrue(VFS.class.isAssignableFrom(c)));
-  }
+    @Test
+    void findImplementationsWithNullPackageName() {
+        ResolverUtil<VFS> resolverUtil = new ResolverUtil<>();
+        resolverUtil.findImplementations(VFS.class, null);
+        assertEquals(resolverUtil.getClasses().size(), 0);
+    }
 
-  @Test
-  void findAnnotatedWithNullPackageName() {
-    ResolverUtil<Object> resolverUtil = new ResolverUtil<>();
-    resolverUtil.findAnnotated(CacheNamespace.class, null);
-    assertEquals(resolverUtil.getClasses().size(), 0);
-  }
+    @Test
+    void findImplementations() {
+        ResolverUtil<VFS> resolverUtil = new ResolverUtil<>();
+        resolverUtil.findImplementations(VFS.class, "org.apache.ibatis.io");
+        Set<Class<? extends VFS>> classSets = resolverUtil.getClasses();
+        // org.apache.ibatis.io.VFS
+        // org.apache.ibatis.io.DefaultVFS
+        // org.apache.ibatis.io.JBoss6VFS
+        assertEquals(classSets.size(), 3); // fail if add a new VFS implementation in this
+                                           // package!!!
+        classSets.forEach(c -> assertTrue(VFS.class.isAssignableFrom(c)));
+    }
 
-  @Test
-  void findAnnotated() {
-    ResolverUtil<Object> resolverUtil = new ResolverUtil<>();
-    resolverUtil.findAnnotated(CacheNamespace.class, this.getClass().getPackage().getName());
-    Set<Class<?>> classSets = resolverUtil.getClasses();
-    //org.apache.ibatis.io.ResolverUtilTest.TestMapper
-    assertEquals(classSets.size(), 1);
-    classSets.forEach(c -> assertNotNull(c.getAnnotation(CacheNamespace.class)));
-  }
+    @Test
+    void findAnnotatedWithNullPackageName() {
+        ResolverUtil<Object> resolverUtil = new ResolverUtil<>();
+        resolverUtil.findAnnotated(CacheNamespace.class, null);
+        assertEquals(resolverUtil.getClasses().size(), 0);
+    }
 
-  @Test
-  void find() {
-    ResolverUtil<VFS> resolverUtil = new ResolverUtil<>();
-    resolverUtil.find(new ResolverUtil.IsA(VFS.class), "org.apache.ibatis.io");
-    Set<Class<? extends VFS>> classSets = resolverUtil.getClasses();
-    //org.apache.ibatis.io.VFS
-    //org.apache.ibatis.io.DefaultVFS
-    //org.apache.ibatis.io.JBoss6VFS
-    assertEquals(classSets.size(), 3);
-    classSets.forEach(c -> assertTrue(VFS.class.isAssignableFrom(c)));
-  }
+    @Test
+    void findAnnotated() {
+        ResolverUtil<Object> resolverUtil = new ResolverUtil<>();
+        resolverUtil.findAnnotated(CacheNamespace.class, this.getClass().getPackage().getName());
+        Set<Class<?>> classSets = resolverUtil.getClasses();
+        // org.apache.ibatis.io.ResolverUtilTest.TestMapper
+        assertEquals(classSets.size(), 1);
+        classSets.forEach(c -> assertNotNull(c.getAnnotation(CacheNamespace.class)));
+    }
 
-  @Test
-  void getPackagePath() {
-    ResolverUtil resolverUtil = new ResolverUtil();
-    assertNull(resolverUtil.getPackagePath(null));
-    assertEquals(resolverUtil.getPackagePath("org.apache.ibatis.io"), "org/apache/ibatis/io");
-  }
+    @Test
+    void find() {
+        ResolverUtil<VFS> resolverUtil = new ResolverUtil<>();
+        resolverUtil.find(new ResolverUtil.IsA(VFS.class), "org.apache.ibatis.io");
+        Set<Class<? extends VFS>> classSets = resolverUtil.getClasses();
+        // org.apache.ibatis.io.VFS
+        // org.apache.ibatis.io.DefaultVFS
+        // org.apache.ibatis.io.JBoss6VFS
+        assertEquals(classSets.size(), 3);
+        classSets.forEach(c -> assertTrue(VFS.class.isAssignableFrom(c)));
+    }
 
-  @Test
-  void addIfMatching() {
-    ResolverUtil<VFS> resolverUtil = new ResolverUtil<>();
-    resolverUtil.addIfMatching(new ResolverUtil.IsA(VFS.class), "org/apache/ibatis/io/DefaultVFS.class");
-    resolverUtil.addIfMatching(new ResolverUtil.IsA(VFS.class), "org/apache/ibatis/io/VFS.class");
-    Set<Class<? extends VFS>> classSets = resolverUtil.getClasses();
-    assertEquals(classSets.size(), 2);
-    classSets.forEach(c -> assertTrue(VFS.class.isAssignableFrom(c)));
-  }
+    @Test
+    void getPackagePath() {
+        ResolverUtil resolverUtil = new ResolverUtil();
+        assertNull(resolverUtil.getPackagePath(null));
+        assertEquals(resolverUtil.getPackagePath("org.apache.ibatis.io"), "org/apache/ibatis/io");
+    }
 
-  @Test
-  void addIfNotMatching() {
-    ResolverUtil<VFS> resolverUtil = new ResolverUtil<>();
-    resolverUtil.addIfMatching(new ResolverUtil.IsA(VFS.class), "org/apache/ibatis/io/Xxx.class");
-    assertEquals(resolverUtil.getClasses().size(), 0);
-  }
+    @Test
+    void addIfMatching() {
+        ResolverUtil<VFS> resolverUtil = new ResolverUtil<>();
+        resolverUtil.addIfMatching(new ResolverUtil.IsA(VFS.class), "org/apache/ibatis/io/DefaultVFS.class");
+        resolverUtil.addIfMatching(new ResolverUtil.IsA(VFS.class), "org/apache/ibatis/io/VFS.class");
+        Set<Class<? extends VFS>> classSets = resolverUtil.getClasses();
+        assertEquals(classSets.size(), 2);
+        classSets.forEach(c -> assertTrue(VFS.class.isAssignableFrom(c)));
+    }
 
-  @Test
-  void testToString() {
-    ResolverUtil.IsA isa = new ResolverUtil.IsA(VFS.class);
-    assertTrue(isa.toString().contains(VFS.class.getSimpleName()));
+    @Test
+    void addIfNotMatching() {
+        ResolverUtil<VFS> resolverUtil = new ResolverUtil<>();
+        resolverUtil.addIfMatching(new ResolverUtil.IsA(VFS.class), "org/apache/ibatis/io/Xxx.class");
+        assertEquals(resolverUtil.getClasses().size(), 0);
+    }
 
-    ResolverUtil.AnnotatedWith annotatedWith = new ResolverUtil.AnnotatedWith(CacheNamespace.class);
-    assertTrue(annotatedWith.toString().contains("@" + CacheNamespace.class.getSimpleName()));
-  }
+    @Test
+    void testToString() {
+        ResolverUtil.IsA isa = new ResolverUtil.IsA(VFS.class);
+        assertTrue(isa.toString().contains(VFS.class.getSimpleName()));
 
+        ResolverUtil.AnnotatedWith annotatedWith = new ResolverUtil.AnnotatedWith(CacheNamespace.class);
+        assertTrue(annotatedWith.toString().contains("@" + CacheNamespace.class.getSimpleName()));
+    }
 
-  @CacheNamespace(readWrite = false)
-  private interface TestMapper {
-    //test ResolverUtil.findAnnotated method
-  }
+    @CacheNamespace(readWrite = false)
+    private interface TestMapper {
+
+        // test ResolverUtil.findAnnotated method
+
+    }
 
 }

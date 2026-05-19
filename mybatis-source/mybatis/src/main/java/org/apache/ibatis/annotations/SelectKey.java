@@ -45,70 +45,68 @@ import org.apache.ibatis.mapping.StatementType;
 @Target(ElementType.METHOD)
 @Repeatable(SelectKey.List.class)
 public @interface SelectKey {
-  /**
-   * Returns an SQL for retrieving a key value.
-   *
-   * @return an SQL for retrieving a key value
-   */
-  String[] statement();
 
-  /**
-   * Returns property names that holds a key value.
-   * <p>
-   * If you specify multiple property, please separate using comma(',').
-   * </p>
-   *
-   * @return property names that separate with comma(',')
-   */
-  String keyProperty();
+    /**
+     * Returns an SQL for retrieving a key value.
+     * @return an SQL for retrieving a key value
+     */
+    String[] statement();
 
-  /**
-   * Returns column names that retrieves a key value.
-   * <p>
-   * If you specify multiple column, please separate using comma(',').
-   * </p>
-   *
-   * @return column names that separate with comma(',')
-   */
-  String keyColumn() default "";
+    /**
+     * Returns property names that holds a key value.
+     * <p>
+     * If you specify multiple property, please separate using comma(',').
+     * </p>
+     * @return property names that separate with comma(',')
+     */
+    String keyProperty();
 
-  /**
-   * Returns whether retrieves a key value before executing insert/update statement.
-   *
-   * @return {@code true} if execute before; {@code false} if otherwise
-   */
-  boolean before();
+    /**
+     * Returns column names that retrieves a key value.
+     * <p>
+     * If you specify multiple column, please separate using comma(',').
+     * </p>
+     * @return column names that separate with comma(',')
+     */
+    String keyColumn() default "";
 
-  /**
-   * Returns the key value type.
-   *
-   * @return the key value type
-   */
-  Class<?> resultType();
+    /**
+     * Returns whether retrieves a key value before executing insert/update statement.
+     * @return {@code true} if execute before; {@code false} if otherwise
+     */
+    boolean before();
 
-  /**
-   * Returns the statement type to use.
-   *
-   * @return the statement type
-   */
-  StatementType statementType() default StatementType.PREPARED;
+    /**
+     * Returns the key value type.
+     * @return the key value type
+     */
+    Class<?> resultType();
 
-  /**
-   * @return A database id that correspond this select key
-   * @since 3.5.5
-   */
-  String databaseId() default "";
+    /**
+     * Returns the statement type to use.
+     * @return the statement type
+     */
+    StatementType statementType() default StatementType.PREPARED;
 
-  /**
-   * The container annotation for {@link SelectKey}.
-   * @author Kazuki Shimizu
-   * @since 3.5.5
-   */
-  @Documented
-  @Retention(RetentionPolicy.RUNTIME)
-  @Target(ElementType.METHOD)
-  @interface List {
-    SelectKey[] value();
-  }
+    /**
+     * @return A database id that correspond this select key
+     * @since 3.5.5
+     */
+    String databaseId() default "";
+
+    /**
+     * The container annotation for {@link SelectKey}.
+     *
+     * @author Kazuki Shimizu
+     * @since 3.5.5
+     */
+    @Documented
+    @Retention(RetentionPolicy.RUNTIME)
+    @Target(ElementType.METHOD)
+    @interface List {
+
+        SelectKey[] value();
+
+    }
 
 }

@@ -16,38 +16,40 @@
 package org.apache.ibatis.submitted.mapper_type_parameter;
 
 public class Country {
-  private Long id;
 
-  private String name;
+    private Long id;
 
-  public Country() {
-    super();
-  }
+    private String name;
 
-  public Country(Long id) {
-    super();
-    this.id = id;
-  }
+    public Country() {
+        super();
+    }
 
-  public Country(Long id, String name) {
-    super();
-    this.id = id;
-    this.name = name;
-  }
+    public Country(Long id) {
+        super();
+        this.id = id;
+    }
 
-  public Long getId() {
-    return id;
-  }
+    public Country(Long id, String name) {
+        super();
+        this.id = id;
+        this.name = name;
+    }
 
-  public void setId(Long id) {
-    this.id = id;
-  }
+    public Long getId() {
+        return id;
+    }
 
-  public String getName() {
-    return name;
-  }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-  public void setName(String name) {
-    this.name = name;
-  }
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
 }

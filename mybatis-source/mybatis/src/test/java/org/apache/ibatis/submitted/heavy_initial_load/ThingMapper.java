@@ -19,5 +19,6 @@ import org.apache.ibatis.annotations.Param;
 
 public interface ThingMapper {
 
-  Thing selectByCode(@Param("code") Code aCode);
+    Thing selectByCode(@Param("code") Code aCode);
+
 }

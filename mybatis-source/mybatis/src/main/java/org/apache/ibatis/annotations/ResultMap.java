@@ -38,14 +38,13 @@ import java.lang.annotation.Target;
  *   &#064;ResultMap("userMap")
  *   User selectByEmail(String email);
  * }
- * </pre>
- * Mapper XML:
- * <pre>{@code
+ * </pre> Mapper XML: <pre>{@code
  * <mapper namespace="com.example.mapper.UserMapper">
  *   <resultMap id="userMap" type="com.example.model.User">
  *     <id property="id" column="id" />
  *     <result property="name" column="name" />
- *     <association property="email" select="selectUserEmailById" column="id" fetchType="lazy"/>
+ *     <association property="email" select="selectUserEmailById" column="id" fetchType=
+"lazy"/>
  *   </resultMap>
  * </mapper>
  * }
@@ -57,10 +56,11 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
 public @interface ResultMap {
-  /**
-   * Returns result map names to use.
-   *
-   * @return result map names
-   */
-  String[] value();
+
+    /**
+     * Returns result map names to use.
+     * @return result map names
+     */
+    String[] value();
+
 }

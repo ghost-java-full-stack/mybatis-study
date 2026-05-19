@@ -18,7 +18,9 @@ package org.apache.ibatis.submitted.enum_with_method;
 public class User {
 
     private Integer id;
+
     private String name;
+
     private Currency cur;
 
     public Integer getId() {
@@ -44,4 +46,5 @@ public class User {
     public void setCur(Currency cur) {
         this.cur = cur;
     }
+
 }

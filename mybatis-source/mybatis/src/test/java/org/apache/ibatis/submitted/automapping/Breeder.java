@@ -17,22 +17,24 @@ package org.apache.ibatis.submitted.automapping;
 
 public class Breeder {
 
-  private Integer breederId;
-  private String breederName;
+    private Integer breederId;
 
-  public Integer getBreederId() {
-    return breederId;
-  }
+    private String breederName;
 
-  public void setBreederId(Integer breederId) {
-    this.breederId = breederId;
-  }
+    public Integer getBreederId() {
+        return breederId;
+    }
 
-  public String getBreederName() {
-    return breederName;
-  }
+    public void setBreederId(Integer breederId) {
+        this.breederId = breederId;
+    }
 
-  public void setBreederName(String breederName) {
-    this.breederName = breederName;
-  }
+    public String getBreederName() {
+        return breederName;
+    }
+
+    public void setBreederName(String breederName) {
+        this.breederName = breederName;
+    }
+
 }

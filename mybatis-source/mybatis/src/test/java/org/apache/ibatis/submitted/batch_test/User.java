@@ -17,31 +17,34 @@ package org.apache.ibatis.submitted.batch_test;
 
 public class User {
 
-  private Integer id;
-  private String name;
-  private Dept dept;
+    private Integer id;
 
-  public Dept getDept() {
-    return dept;
-  }
+    private String name;
 
-  public void setDept(Dept dept) {
-    this.dept = dept;
-  }
+    private Dept dept;
 
-  public Integer getId() {
-    return id;
-  }
+    public Dept getDept() {
+        return dept;
+    }
 
-  public void setId(Integer id) {
-    this.id = id;
-  }
+    public void setDept(Dept dept) {
+        this.dept = dept;
+    }
 
-  public String getName() {
-    return name;
-  }
+    public Integer getId() {
+        return id;
+    }
 
-  public void setName(String name) {
-    this.name = name;
-  }
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
 }

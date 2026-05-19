@@ -24,19 +24,20 @@ import org.apache.ibatis.jdbc.SQL;
 
 public interface Mapper {
 
-  @SelectProvider(type = SqlProvider.class)
-  List<User> findAll(@Param("offset") long offset, @Param("limit") int limit);
+    @SelectProvider(type = SqlProvider.class)
+    List<User> findAll(@Param("offset") long offset, @Param("limit") int limit);
 
-  class SqlProvider implements ProviderMethodResolver {
-    public String findAll() {
-      return new SQL()
-        .SELECT("user_id", "name")
-        .FROM("${schema}users")
-        .ORDER_BY("user_id")
-        .OFFSET_ROWS("#{offset}")
-        .FETCH_FIRST_ROWS_ONLY("#{limit}")
-        .toString();
+    class SqlProvider implements ProviderMethodResolver {
+
+        public String findAll() {
+            return new SQL().SELECT("user_id", "name")
+                .FROM("${schema}users")
+                .ORDER_BY("user_id")
+                .OFFSET_ROWS("#{offset}")
+                .FETCH_FIRST_ROWS_ONLY("#{limit}")
+                .toString();
+        }
+
     }
-  }
 
 }

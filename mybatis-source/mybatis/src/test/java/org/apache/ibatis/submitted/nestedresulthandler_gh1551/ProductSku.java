@@ -17,41 +17,44 @@ package org.apache.ibatis.submitted.nestedresulthandler_gh1551;
 
 public class ProductSku {
 
-  private String id;
-  private String color;
-  private String size;
-  private String productId;
+    private String id;
 
-  public String getId() {
-    return id;
-  }
+    private String color;
 
-  public void setId(String id) {
-    this.id = id;
-  }
+    private String size;
 
-  public String getColor() {
-    return color;
-  }
+    private String productId;
 
-  public void setColor(String color) {
-    this.color = color;
-  }
+    public String getId() {
+        return id;
+    }
 
-  public String getSize() {
-    return size;
-  }
+    public void setId(String id) {
+        this.id = id;
+    }
 
-  public void setSize(String size) {
-    this.size = size;
-  }
+    public String getColor() {
+        return color;
+    }
 
-  public String getProductId() {
-    return productId;
-  }
+    public void setColor(String color) {
+        this.color = color;
+    }
 
-  public void setProductId(String productId) {
-    this.productId = productId;
-  }
+    public String getSize() {
+        return size;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
+    }
+
+    public String getProductId() {
+        return productId;
+    }
+
+    public void setProductId(String productId) {
+        this.productId = productId;
+    }
 
 }

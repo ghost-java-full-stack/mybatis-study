@@ -19,19 +19,21 @@ import org.apache.ibatis.annotations.Param;
 
 public class Post {
 
-  private final int id;
-  private final String body;
+    private final int id;
 
-  public Post(@Param("id") int id, @Param("body") String body) {
-    this.id = id;
-    this.body = body;
-  }
+    private final String body;
 
-  public int getId() {
-    return id;
-  }
+    public Post(@Param("id") int id, @Param("body") String body) {
+        this.id = id;
+        this.body = body;
+    }
 
-  public String getBody() {
-    return body;
-  }
+    public int getId() {
+        return id;
+    }
+
+    public String getBody() {
+        return body;
+    }
+
 }
